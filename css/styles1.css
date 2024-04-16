@@ -1,0 +1,70 @@
+/* Allgemeine Stile */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Um seitliches Scrollen zu verhindern */
+}
+
+.pokedex {
+  background-color: #ececec;
+  width: 100%;
+  min-height: 1200px; /* Beispielhöhe, anpassen nach Bedarf */
+  display: flex;
+  flex-direction: column; /* Container vertikal anordnen */
+}
+
+.pokedex-screen {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  flex-grow: 1; /* Container wachsen, um den verbleibenden Platz zu füllen */
+}
+
+.pokedex-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.pokedex-body {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1; /* Container wachsen, um den verbleibenden Platz zu füllen */
+}
+
+.pokedex-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  min-height: 100%; /* Mindesthöhe auf die Höhe des Elterncontainers setzen */
+}
+
+.pokedex-card {
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer; /* Hinzugefügt, um zu zeigen, dass es anklickbar ist */
+  max-height: calc(100vh - 180px); /* 180px als Puffer für Header, Abstand und Text darunter */
+  overflow: hidden; /* Überlauf verstecken */
+}
+
+.pokedex-card img {
+  max-width: 100%;
+  max-height: 100%; /* Bild an die maximale Höhe des Containers anpassen */
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+  #backBtn {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
