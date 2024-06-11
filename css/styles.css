@@ -1,57 +1,70 @@
-/* Allgemeine Stile */
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .pokedex {
-    background-color: #ececec;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .pokedex-screen {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-  }
-  
-  .pokedex-header {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .pokedex-header h1 {
-    margin: 0;
-    font-size: 24px;
-  }
-  
-  .pokedex-body {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .pokedex-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-  }
-  
-  .pokedex-card {
-    text-align: center;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 10px;
-  }
-  
-  .pokedex-card img {
-    max-width: 100%;
-    max-height: 100%;
-    border-radius: 5px;
-    margin-bottom: 10px;
-  }
+  font-family: 'Comic Sans MS', cursive, sans-serif; /* Playful font */
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pokedex {
+  background-color: #63bfdb; /* Vibrant yellow background */
+  width: 95vw;
+  max-width: 100%;
+  padding: 20px;
+  border-radius: 20px; /* Rounded corners for a playful look */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Soft shadow */
+  margin-top: 20px;
+}
+
+.pokedex-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.pokedex-header h1 {
+  margin: 0;
+  font-size: 36px; /* Larger font size */
+  color: #333;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Text shadow for emphasis */
+}
+
+.pokedex-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.pokedex-card {
+  text-align: center;
+  border: 3px solid #fff; /* Thick white border */
+  border-radius: 10px;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.pokedex-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Enhanced hover effect */
+}
+
+.pokedex-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 20px; /* Increased margin */
+  object-fit: cover;
+}
+
+.pokedex-card h2 {
+  margin: 0;
+  font-size: 24px; /* Larger font size */
+  color: #333;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Text shadow for emphasis */
+}
