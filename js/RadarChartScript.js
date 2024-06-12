@@ -114,6 +114,7 @@ if (ocName === 'Aletea') {
 } else {
     // If OC name is neither "Aletea" nor "Luke", do not show the chart
     document.getElementById('radarChart').style.display = 'none';
+    imageSrc = 'bilder/GenjuuSchool_2.1.png';
     photogallery = [];
 }
 
