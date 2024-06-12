@@ -1,19 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title id="pageTitle"></title>
-  <link rel="stylesheet" href="css/detail.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle"></title>
+    <link rel="stylesheet" href="css/detail.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
   <div class="oc-details">
-    <h2 id="ocNameHeading"></h2> <!-- Dynamically inserted OC name -->
-    <div id="ocName"></div>
-    <!-- Additional details can be displayed here -->
+    <div class="content-container">
+        <div class="left-info">
+            <h2 id="ocNameHeading"></h2>
+            <div id="ocName"></div>
+            <img id="ocImage" class="oc-image" alt="OC Image">
+            <div>
+              <!--<p>Best friends:</p>-->
+            </div>
+            
+        </div>
+        <div class="chart-info">
+            <div style="width: 100%;">
+                <canvas id="radarChart"></canvas>
+                <div class="ChartText">
+                  <p>Age:</p>
+                  <p>Height:</p>
+                  <p>Birthday:</p>
+                  <p>Specie:</p>
+                  <p>Gender/Pronouns:</p>
+                  <p>Sexuality:</p>
+                  <p>Mtbi:</p>
+                  <p>Story:</p>
+                </div>
+            </div>
+        </div>
+        <div class="gallery" id="photoGallery">
+          <!-- Photos will be added dynamically here -->
+        </div>
+    </div>
   </div>
 
-  <script src="js/details.js"></script>
-  </script>
+    <script src="js/details.js"></script>
+    <script src="js/RadarChartScript.js"></script>
+
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+    
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyB1lOwS0Oq-1pqeNSAoFwe1eGo9ELBK2oA",
+        authDomain: "oc-pokedex.firebaseapp.com",
+        projectId: "oc-pokedex",
+        storageBucket: "oc-pokedex.appspot.com",
+        messagingSenderId: "449292627534",
+        appId: "1:449292627534:web:fc1a24cc5c7c83242add1f"
+      };
+    
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+    </script>
 </body>
 </html>
