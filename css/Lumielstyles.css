@@ -1,0 +1,248 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f0ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    position: relative;
+    width: 90%;
+    height: 90%;
+    background-color: #e0d7f5;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.tab-container {
+    display: flex;
+}
+
+.tab {
+    background: #6a5acd;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 10px;
+}
+
+.tab:hover, .tab.active {
+    background-color: #483d8b;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.tabcontent {
+    flex: 1;
+    display: none;
+}
+
+.tabcontent.active {
+    display: block;
+}
+
+
+.profile-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.profile-bubble {
+    display: flex;
+    flex-direction: column; /* Elemente in Spalten anordnen */
+}
+
+.profile-header {
+    display: flex;
+    align-items: center; /* Zentriert die Elemente vertikal */
+    margin-bottom: 10px; /* Abstand zwischen header und details */
+}
+
+.profile-bubble h2 {
+    margin: 0; /* Null Abstand oben und unten für h2 */
+    font-size: 24px;
+}
+
+.profile-bubble .profile-details {
+    margin-left: 110px; /* Abstand zum Bild und h2 */
+}
+
+.profile-bubble p {
+    margin: 5px 0; /* Abstand oben und unten für Absatz */
+    font-size: 14px; /* Schriftgröße für die Absätze */
+    color: #666; /* Farbe für den Text */
+    transform: translateX(-2%);
+}
+
+.stat-container {
+    position: absolute;
+    top: 52%;
+    left: 2%;
+    display: flex;
+}
+
+
+.character-container {
+    position: absolute;
+    top: 52%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.character-container img {
+    width: 280px;
+    height: auto;
+}
+
+.character-name {
+    position: absolute;
+    top: 70%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border-radius: 10px;
+    padding: 0px 10px;
+    display: inline-block;
+    margin-top: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.Friends-container {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Arrange images in columns */
+    align-items: center; /* Center images horizontally */
+    justify-content: space-between; /* Spacing between galleryBilder and gallery */
+    position: absolute;
+    right: 450px;
+    top: 20px;
+    text-align: center;
+}
+
+.galleryFriends {
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center images horizontally */
+    text-align: center;
+}
+
+.galleryFriends img {
+    width: 120px;
+    height: 120px;
+    margin: 5px 0;
+    border-radius: 10px;
+    border: 3px solid #9589e2; /* Adjust border thickness as needed */
+}
+
+.gallery-container {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Spacing between galleryBilder and gallery */
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+}
+
+.gallery {
+    display: flex;
+    flex-direction: column; /* Arrange images in columns */
+    align-items: center; /* Center images horizontally */
+    transform: translateX(-80px); /* Adjust this value to move gallery to the left */
+    margin-top: 70px; /* Adjust this value to move gallery down */
+}
+
+.galleryBilder {
+    display: flex;
+    flex-direction: column; /* Arrange images in columns */
+    align-items: center; /* Center images horizontally */
+    transform: translateX(-110px); /* Adjust this value to move gallery to the left */
+}
+
+.gallery img {
+    width: 80px;
+    height: 80px;
+    margin: 5px 0;
+    border-radius: 10px;
+    border: 3px solid white; /* Adjust border thickness as needed */
+}
+
+.galleryBilder img {
+    width: 140px;
+    height: 140px;
+    margin: 5px 0;
+    border-radius: 10px;
+    border: 3px solid white; /* Adjust border thickness as needed */
+}
+
+
+.waves {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.wave {
+    width: 100%;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.waves2 {
+    position: absolute;
+    bottom: 0;
+    transform: translateY(10%);
+    width: 100%;
+}
+
+.chart-info {
+    width: 35%; /* Adjust as needed */
+    margin-left: 550px; /* Add some margin to the left */
+    transform: translateY(-30%);
+}
+
+
+.dynamic-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px; /* Beispiel: Abstand nach oben */
+}
+
+.Dynamic-item {
+    width: calc(25% - 20px); /* Beispiel: 4 Bilder pro Reihe, mit Abstand */
+    margin-bottom: 20px; /* Beispiel: Abstand zwischen den Bildern */
+}
+
+@media (max-width: 768px) {
+    .Dynamic-item {
+        width: calc(50% - 20px); /* Beispiel: 2 Bilder pro Reihe auf kleinen Bildschirmen */
+    }
+}
+
+@media (max-width: 480px) {
+    .Dynamic-item {
+        width: calc(100% - 20px); /* Beispiel: 1 Bild pro Reihe auf sehr kleinen Bildschirmen */
+    }
+}
+
+

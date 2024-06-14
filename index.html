@@ -118,7 +118,11 @@
 
   <script>
     function ToDetailPage(ocName) {
-      window.location.href = 'detail_page.html?name=' + ocName;
+      if(ocName=='Lumiel'){
+        window.location.href = 'Lumiel.html';
+      } else {
+        window.location.href = 'detail_page.html?name=' + ocName;
+      }
     }
   </script>
 </body>
