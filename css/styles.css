@@ -76,3 +76,14 @@ body {
   transform: translateY(-10px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
+
+@media screen and (max-width: 768px) {
+  .pokedex-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 10px;
+  }
+  .pokedex-card {
+    width: 100%;
+  }
+}

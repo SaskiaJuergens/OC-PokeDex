@@ -233,16 +233,50 @@ body {
     margin-bottom: 20px; /* Beispiel: Abstand zwischen den Bildern */
 }
 
-@media (max-width: 768px) {
-    .Dynamic-item {
-        width: calc(50% - 20px); /* Beispiel: 2 Bilder pro Reihe auf kleinen Bildschirmen */
-    }
-}
-
+/* Media Query für kleine Bildschirme (Handys) */
 @media (max-width: 480px) {
-    .Dynamic-item {
-        width: calc(100% - 20px); /* Beispiel: 1 Bild pro Reihe auf sehr kleinen Bildschirmen */
+    .tab {
+        padding: 8px 16px; /* Kleinere Padding für Tabs */
+    }
+
+    .profile-image {
+        width: 80px; /* Kleinere Profilbildgröße */
+        height: 80px;
+    }
+
+    .profile-bubble h2 {
+        font-size: 20px; /* Kleinere Schriftgröße für h2 */
+    }
+
+    .profile-bubble .profile-details {
+        margin-left: 90px; /* Weniger Abstand zu Bild und h2 */
+    }
+
+    .profile-bubble p {
+        font-size: 12px; /* Kleinere Schriftgröße für Absätze */
+    }
+
+    .character-container img {
+        width: 200px; /* Kleinere Charakterbildgröße */
+    }
+
+    .character-name {
+        top: 65%; /* Höhere Position für den Namen */
+        font-size: 16px; /* Kleinere Schriftgröße für den Namen */
+    }
+
+    .galleryFriends img {
+        width: 100px; /* Kleinere Größe für Freunde-Bilder */
+        height: 100px;
+    }
+
+    .gallery img {
+        width: 60px; /* Kleinere Größe für Galeriebilder */
+        height: 60px;
+    }
+
+    .galleryBilder img {
+        width: 100px; /* Kleinere Größe für Galeriebilder */
+        height: 100px;
     }
 }
-
-
