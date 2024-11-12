@@ -8,6 +8,12 @@
 </head>
 <body>
   <div class="carousel-container">
+    <!-- Linker Bereich für die Backstory -->
+    <div class="backstory">
+      <h3>Charakter Backstory</h3>
+      <p>Beschreibung der Hintergrundgeschichte des aktuellen Charakters.</p>
+    </div>
+
     <button class="carousel-arrow left" onclick="moveLeft()">&#9664;</button>
     
     <div class="carousel">
@@ -29,9 +35,28 @@
     </div>
     
     <button class="carousel-arrow right" onclick="moveRight()">&#9654;</button>
+
+    <!-- Rechter Bereich für Charakterattribute und Spezialattacken -->
+    <div class="character-details">
+      <div class="attribute-chart">
+        <p>Attribut-Diagramm</p>
+        <!-- Hier könnten Balken für Stärke, Intelligenz usw. sein -->
+      </div>
+      <div class="special-attacks">
+        <div class="attack">
+          <img src="attack_icon1.png" alt="Attack 1">
+          <div class="attack-title">Berserker Fury</div>
+        </div>
+        <div class="attack">
+          <img src="attack_icon2.png" alt="Attack 2">
+          <div class="attack-title">Skyfall Barrage</div>
+        </div>
+        <!-- Weitere Attacken hier -->
+      </div>
+    </div>
   </div>
 
   <script src="js/selctionJs.js"></script>
-</body>
+</body>    
 </html>
 
