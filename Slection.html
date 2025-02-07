@@ -7,15 +7,27 @@
   <link rel="stylesheet" href="css/selctionStyle.css">
 </head>
 <body>
-  <div class="carousel-container">
+  <div class="character-container">
     <!-- Linker Bereich für die Backstory -->
     <div class="backstory">
-      <h3>Charakter Backstory</h3>
-      <p>Beschreibung der Hintergrundgeschichte des aktuellen Charakters.</p>
+      <h3 id="character-name">Character Name</h3>
+      <div class="attribute-chart">
+        <p>Age:             17</p>
+        <p>Height:          176 cm</p>
+        <p>Birthday:        10.01</p>
+        <p>Specie:          Visionary</p>
+        <p>Gender/Pronouns: Female she/her</p>
+        <p>Sexuality:       Heterosexual</p>
+        <p>Mtbi:            ENTP</p>
+      </div>
+      <div class="button-container">
+        <button>More Information</button>
+      </div>
     </div>
+  </div>
 
+    <div class="carousel-container">
     <button class="carousel-arrow left" onclick="moveLeft()">&#9664;</button>
-    
     <div class="carousel">
       <img src="alle_png/Aletea.png" class="character" alt="Character 1">
       <img src="alle_png/Ariko.png" class="character" alt="Character 2">
@@ -23,7 +35,7 @@
       <img src="alle_png/dana.png" class="character" alt="Character 4">
       <img src="alle_png/Ethan.png" class="character" alt="Character 5">
       <img src="alle_png/Lillith.png" class="character" alt="Character 6">
-      <img src="alle_png/louann.png" class="character" alt="Character 7">
+      <img src="alle_png/tyler.png" class="character" alt="Character 7">
       <img src="alle_png/luke.png" class="character" alt="Character 8">
       <img src="alle_png/Lumiel.png" class="character" alt="Character 9">
       <img src="alle_png/mitsu.png" class="character" alt="Character 10">
@@ -31,30 +43,10 @@
       <img src="alle_png/Pyronus.png" class="character" alt="Character 12">
       <img src="alle_png/rebecca.png" class="character" alt="Character 13">
       <img src="alle_png/sabrina.png" class="character" alt="Character 14">
-      <img src="alle_png/tyler.png" class="character" alt="Character 15">
+      <img src="alle_png/louann.png" class="character" alt="Character 15">
     </div>
-    
     <button class="carousel-arrow right" onclick="moveRight()">&#9654;</button>
-
-    <!-- Rechter Bereich für Charakterattribute und Spezialattacken -->
-    <div class="character-details">
-      <div class="attribute-chart">
-        <p>Attribut-Diagramm</p>
-        <!-- Hier könnten Balken für Stärke, Intelligenz usw. sein -->
-      </div>
-      <div class="special-attacks">
-        <div class="attack">
-          <img src="attack_icon1.png" alt="Attack 1">
-          <div class="attack-title">Berserker Fury</div>
-        </div>
-        <div class="attack">
-          <img src="attack_icon2.png" alt="Attack 2">
-          <div class="attack-title">Skyfall Barrage</div>
-        </div>
-        <!-- Weitere Attacken hier -->
-      </div>
     </div>
-  </div>
 
   <script src="js/selctionJs.js"></script>
 </body>    
