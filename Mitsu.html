@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mitsu Character Board</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Google Fonts: Merriweather (Serifen-Schriftart) -->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
+    
     <style>
         body {
             background-color: #111;
@@ -37,7 +40,7 @@
             background: #222;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 0 5px rgba(0, 255, 0, 0.3);
+            box-shadow: 0 0 5px rgba(236, 102, 6, 0.584);  /*Farbe je nach Character ändern*/
             text-align: center;
             width: 100%;
         }
@@ -76,7 +79,7 @@
         }
         .stat div {
             height: 20px;
-            background: limegreen;
+            background: rgba(77, 255, 77, 0.918);
         }
         .tasks {
             background: transparent;
@@ -95,10 +98,13 @@
             padding: 10px;
             border-radius: 5px;
         }
-        img {
+        .card img {
+            max-width: 200px;
+            border-radius: 3px;
+        }
+        .middle img {
             max-width: 200px;
             border-radius: 10px;
-            border: 1px solid black;
         }
         .xp-container {
             background: #222;
@@ -109,55 +115,106 @@
             text-align: center;
         }
         .header-text {
-            font-size: 2em;
-            font-weight: bold;
+            font-family: 'Merriweather', serif;  /* Serifen-Schriftart */
+            font-size: 3em;  /* Größerer Text */
+            font-weight: 700;  /* Fett */
             text-align: center;
             margin-bottom: 20px;
+            color: #ffad72;  /* Leuchtendes */
+            text-shadow: 
+                0 0 5px #ff7e21, /* Schlagschatten */
+                0 0 10px #ff7e21,
+                0 0 15px #ff7e21;
+        }
+        .back-button {
+            position: fixed;
+            bottom: 20px;  /* Abstand vom unteren Rand */
+            left: 20px;    /* Abstand vom linken Rand */
+            font-size: 2.5em;  /* Größe des Pfeils */
+            color: #D3D3D3;  /* Helles Grau */
+            background: transparent;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .back-button:hover {
+            color: #A9A9A9;  /* Dunkleres Grau beim Hover */
+            transform: scale(1.1);  /* Etwas vergrößern bei Hover */
         }
     </style>
+
+
+
+
 </head>
 <body>
+    <a href="javascript:history.back()" class="back-button">&#8592;</a>
+
     <div class="header-text">Mitsu</div>
     <div class="dashboard">
         <div class="left">
             <div class="card">
-                <img src="alle_png/mitsu.png" alt="Charakter 1">
+                <img src="alle_png/mitsu2.png" alt="Charakter 1">
                 <div class="stat-container">
-                    <img src="alle_png/sabrina2.png" alt="Ex-Friend">
-                    <div class="stat"><div style="width: 80%; background: red"></div>Ex-Friend</div>
+                    <img src="alle_png/sabrina2.png" alt="Sabrina">
+                    <div class="stat"><div style="width: 80%; background: rgb(255, 85, 85)"></div>Ex-Friend</div>
                 </div>
                 <div class="stat-container">
                     <img src="alle_png/Kagami.jpg" alt="Kagami">
-                    <div class="stat"><div style="width: 70%;"></div>Friend</div>
+                    <div class="stat"><div style="width: 80%;"></div>Friend</div>
                 </div>
                 <div class="stat-container">
                     <img src="motivation-icon.png" alt="Yuna">
-                    <div class="stat"><div style="width: 90%;"></div>Friend & Crush</div>
+                    <div class="stat"><div style="width: 90%; background: rgb(255, 107, 206)""></div>Friend & Crush</div>
+                </div>
+                <div class="stat-container">
+                    <img src="motivation-icon.png" alt="Renji">
+                    <div class="stat"><div style="width: 60%;"></div>Friend</div>
+                </div>
+                <div class="stat-container">
+                    <img src="motivation-icon.png" alt="Shouta">
+                    <div class="stat"><div style="width: 68%;"></div>Friend</div>
+                </div>
+                <div class="stat-container">
+                    <img src="alle_png/Louann2.png" alt="Louann">
+                    <div class="stat"><div style="width: 10%; background: rgb(255, 85, 85)"></div>Friend</div>
                 </div>
             </div>
         </div>
         <div class="middle">
             <div class="transparent-card">
                 <canvas id="radarChart"></canvas>
-                <img src="bilder/mitsu2023.png" alt="Background" style="width:100%; max-width:400px;">
+                <img src="alle_png/mitsu.png" alt="Background" style="width:100%; max-width:400px;">
             </div>
         </div>
         <div class="right">
             <div class="tasks">
-                <h2>Aufgaben</h2>
+                <h2>Attributes</h2>
                 <ul>
-                    <li>Yoga & Flexibilität</li>
-                    <li>Meditation & Innere Ruhe</li>
-                    <li>Trainieren mit Freunden</li>
-                    <li>Script üben & Resilienz</li>
-                    <li>Räume aufräumen & Umgebung</li>
+                    <li>Age: 17</li>
+                    <li>Height: 1,69</li>
+                    <li>Specie: Tiger</li>
+                    <li>Birthday: March 3</li>
+                    <li>Gender: non-binary</li>
+                    <li>Sexuality: Pansexual</li>
+                    <li>MTBI: ISTP</li>
+                    <li>Zodiac: Pisces</li>
                 </ul>
             </div>
             <div class="xp-container">
-                <h2>Current XP: 1334</h2>
+                <h2>Backstory</h2>
+                <p>Raised in slavery, bought free by Directprom. Has trust issues with other beings. But now an angel, Sabrina, is showing her everything and trying to befriend her.</p>
             </div>
         </div>
     </div>
+
+
+
+
+
     <script>
         const ctx = document.getElementById('radarChart').getContext('2d');
         new Chart(ctx, {
@@ -167,16 +224,28 @@
                 datasets: [{
                     label: 'Stats',
                     data: [80, 70, 60, 75, 85, 56, 34, 45],
-                    backgroundColor: 'rgba(0, 255, 0, 0.1)',
-                    borderColor: 'rgba(0, 255, 0, 0.7)',
-                    borderWidth: 2
+                    backgroundColor: 'rgba(236, 102, 6, 0.1',
+                    borderColor: 'rgba(236, 102, 6, 1)',
+                    borderWidth: 1
                 }]
             },
             options: {
                 responsive: true,
                 scales: {
                     r: {
-                        angleLines: { display: false },
+                        angleLines: { 
+                            display: true, 
+                            borderColor: 'rgba(169, 169, 169, 0.5)' // Helles Grau für die Linien
+                        },
+                        grid: {
+                            color: 'rgba(169, 169, 169, 0.2)' // Helles Grau für den Hintergrundraster
+                        },
+                        ticks: {
+                            font: {
+                                size: 10 // Kleinere Schriftgröße für suggestedMin und suggestedMax Zahlen
+                            },
+                            stepSize: 20, // Optional: Anpassung der Schritte zwischen den Werten
+                        },
                         suggestedMin: 0,
                         suggestedMax: 100
                     }
