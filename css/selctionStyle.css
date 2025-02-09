@@ -1,136 +1,99 @@
-/* Grundlayout */
-body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #111;
-    overflow: hidden;
-  }
-  
-  .carousel-container {
-    display: flex;
-    align-items: center;
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-  }
-  
-  /* Bereich für die Charakter-Details auf der rechten Seite */
-  .character-details {
-    position: absolute;
-    right: 30px;
-    top: 10%;
-    width: 25%;
-    color: white;
-  }
-  
-  .attribute-chart {
-    margin-bottom: 20px;
-    /* Beispiel-Styling für das Diagramm */
-    background-color: #222;
-    height: 150px;
-  }
-  
-  .special-attacks {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .attack {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .attack img {
-    width: 40px;
-    height: 40px;
-  }
-  
-  .attack-title {
-    font-size: 0.9rem;
-    color: #ccc;
-  }
-  
-  /* Bereich für die Backstory auf der linken Seite */
-  .backstory {
-    position: absolute;
-    left: 30px;
-    top: 10%;
-    width: 25%;
-    color: white;
-    font-size: 0.9rem;
-  }
-  
-  /* Karussell-Anpassungen */
-  .carousel {
-    display: flex;
-    position: relative;
-    justify-content: flex-start;
-    align-items: flex-end;
-    height: 100%;
-    width: 50%; /* Platz für die Details auf der rechten Seite schaffen */
-    margin-left: 200px;
-    margin-bottom: 100px;
-  }
-  
-  .character {
-    position: absolute;
-    bottom: 0;
-    max-height: 60vh; /* Kleinere Größe für inaktive Bilder */
-    opacity: 0;
-    transform-origin: center bottom;
-    transition: transform 0.5s, opacity 0.5s;
-  }
-  
-  /* Aktives Bild (immer ganz rechts) */
-  .character.active {
-    transform: translateX(300px) scale(1);
-    opacity: 1;
-    z-index: 3;
-    max-height: 80vh; /* Größer als die inaktiven */
-  }
-  
-  /* Charaktere links vom aktiven Bild */
-  .character.prev1 {
-    transform: translateX(100px) scale(0.6);
-    opacity: 0.6;
-    z-index: 2;
-  }
-  .character.prev2 {
-    transform: translateX(0px) scale(0.5);
-    opacity: 0.4;
-    z-index: 1;
-  }
-  .character.prev3 {
-    transform: translateX(-100px) scale(0.4);
-    opacity: 0.3;
-    z-index: 0;
-  }
-  
-  /* Pfeile an den Rändern */
-  .carousel-arrow {
-    font-size: 2rem;
-    color: white;
-    background: none;
-    border: none;
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
-  }
-  
-  .carousel-arrow.left {
-    left: 30px;
-  }
-  
-  .carousel-arrow.right {
-    right: 30px;
-  }
-  
 
+    body {
+      background-color: #0a0a0a;
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 80%;
+      max-width: 1200px;
+      background: rgba(20, 20, 20, 0.9);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px #3700ff;
+    }
+    .name-container {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #3700ff;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .main-content {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+    .backstory-container, .character-details-container {
+      width: 25%;
+      background: rgba(50, 50, 50, 0.8);
+      padding: 15px;
+      border-radius: 10px;
+    }
+    .carousel-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      width: 50%;
+      overflow: hidden;
+    }
+    .carousel {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      width: 100%;
+    }
+    .character {
+      position: absolute;
+      transition: transform 0.5s, opacity 0.5s;
+      opacity: 0.5;
+    }
+    .character.active {
+      transform: scale(1.2) translateX(0);
+      opacity: 1;
+      z-index: 3;
+    }
+    .character.prev1 {
+      transform: scale(0.8) translateX(-100px);
+      opacity: 0.6;
+      z-index: 2;
+    }
+    .character.prev2 {
+      transform: scale(0.6) translateX(-200px);
+      opacity: 0.4;
+      z-index: 1;
+    }
+    .character.next1 {
+      transform: scale(0.8) translateX(100px);
+      opacity: 0.6;
+      z-index: 2;
+    }
+    .character.next2 {
+      transform: scale(0.6) translateX(200px);
+      opacity: 0.4;
+      z-index: 1;
+    }
+    .carousel-arrow {
+      position: absolute;
+      font-size: 2rem;
+      background: none;
+      border: none;
+      color: #3700ff;
+      cursor: pointer;
+    }
+    .carousel-arrow.left {
+      left: 10px;
+    }
+    .carousel-arrow.right {
+      right: 10px;
+    }

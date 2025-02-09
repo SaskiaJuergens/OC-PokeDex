@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            background-color: #111;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        .dashboard {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .card {
+            background: #222;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+            text-align: center;
+        }
+        .stats-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .stat {
+            width: 80%;
+            background: #333;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .stat div {
+            height: 20px;
+            background: limegreen;
+        }
+        .tasks {
+            background: #222;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+            margin-top: 20px;
+            width: 300px;
+        }
+        .tasks ul {
+            list-style: none;
+            padding: 0;
+        }
+        .tasks li {
+            background: #333;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        img {
+            max-width: 200px;
+            border-radius: 10px;
+        }
+        canvas {
+            max-width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <div class="card">
+            <h2>Mitsu</h2>
+            <img src="alle_png/mitsu.png" alt="Charakter 1">
+            <div class="stats-container">
+                <div class="stat"><div style="width: 80%;"></div>HP</div>
+                <div class="stat"><div style="width: 70%;"></div>Concentration</div>
+                <div class="stat"><div style="width: 60%;"></div>Motivation</div>
+            </div>
+        </div>
+        <div class="card">
+            <h2>Fähigkeiten</h2>
+            <canvas id="radarChart"></canvas>
+        </div>
+    </div>
+    <div class="tasks">
+        <h2>Aufgaben</h2>
+        <ul>
+            <li>Yoga & Flexibilität</li>
+            <li>Meditation & Innere Ruhe</li>
+            <li>Trainieren mit Freunden</li>
+            <li>Script üben & Resilienz</li>
+            <li>Räume aufräumen & Umgebung</li>
+        </ul>
+    </div>
+    <script>
+        const ctx = document.getElementById('radarChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'radar',
+            data: {
+                labels: ['Physisch', 'Intelligenz', 'Spirituell', 'Psyche', 'Kern'],
+                datasets: [{
+                    label: 'Stats',
+                    data: [80, 70, 60, 75, 85],
+                    backgroundColor: 'rgba(0, 255, 0, 0.2)',
+                    borderColor: 'rgba(0, 255, 0, 1)',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    r: {
+                        angleLines: { display: false },
+                        suggestedMin: 0,
+                        suggestedMax: 100
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

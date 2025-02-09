@@ -1,27 +1,36 @@
+/* Basis-Stile */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #f5f0ff;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .container {
     position: relative;
-    width: 90%;
-    height: 90%;
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
     background-color: #e0d7f5;
     border-radius: 20px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 .header {
     display: flex;
     justify-content: space-between;
-    padding: 20px;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #ddd;
 }
 
 .tab-container {
@@ -32,7 +41,7 @@ body {
     background: #6a5acd;
     border: none;
     color: white;
-    padding: 10px 20px;
+    padding: 12px 20px;
     margin: 0 5px;
     cursor: pointer;
     transition: background-color 0.3s;
@@ -45,12 +54,13 @@ body {
 
 .content {
     display: flex;
-    justify-content: space-between;
+    flex-direction: row; /* Flexbox für nebeneinander */
+    justify-content: flex-start;
     padding: 20px;
+    width: 100%;
 }
 
 .tabcontent {
-    flex: 1;
     display: none;
 }
 
@@ -58,142 +68,228 @@ body {
     display: block;
 }
 
+/* Anpassungen für große Bildschirme */
+@media (min-width: 1024px) {
 
-.profile-image {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-right: 20px;
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    /* Profil und Character Image nebeneinander */
+    .profile-bubble {
+        width: 55%; /* Profilbereich nimmt 55% der Breite ein */
+        display: flex;
+        flex-direction: column;
+        padding-right: 20px; /* Abstand zum Character Image */
+    }
+
+    /* Character Image rechts neben dem Profil */
+    #character {
+        width: 35%; /* Character Image nimmt 35% der Breite ein */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #character img {
+        width: 350px; /* Größe des Character Images */
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Profilbild rund machen */
+    .profile-image {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%; /* Rundes Profilbild */
+        margin-right: 20px;
+    }
+
+    /* Title rechts neben dem Profilbild */
+    .profile-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .profile-header h2 {
+        margin: 0;
+        font-size: 24px;
+    }
+
+    /* Backstory und Character Details nebeneinander */
+    .character-details-container {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .character-details-container .backstory {
+        width: 45%;
+    }
+
+    .character-details-container .profile-details {
+        width: 45%;
+    }
+
+    /* Radar Chart */
+    .stat-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 300px; /* Breite des Radar-Charts */
+        height: 300px; /* Höhe des Radar-Charts */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Freunde rechts unten */
+    .Friends-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 30px;
+        text-align: left;
+    }
+
+    .galleryFriends {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .galleryFriends .friend {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 20px;
+        padding: 10px;
+        background-color: #f8f8f8;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .galleryFriends img {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+        border: 3px solid #9589e2;
+    }
+
+    .friend-title {
+        font-size: 14px;
+        font-weight: bold;
+        color: #333;
+    }
 }
 
-.profile-bubble {
-    display: flex;
-    flex-direction: column; /* Elemente in Spalten anordnen */
+/* Media Queries für kleinere Bildschirme */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .profile-header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-image {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 10px;
+    }
+
+    .profile-details {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .character-container img {
+        width: 220px;
+    }
+
+    .character-name {
+        top: 65%;
+        font-size: 14px;
+    }
+
+    .galleryFriends img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .gallery img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .galleryBilder img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .chart-info {
+        width: 100%;
+        margin-top: 30px;
+    }
 }
 
-.profile-header {
-    display: flex;
-    align-items: center; /* Zentriert die Elemente vertikal */
-    margin-bottom: 10px; /* Abstand zwischen header und details */
+@media (max-width: 480px) {
+    .tab {
+        padding: 8px 16px;
+    }
+
+    .profile-image {
+        width: 80px;
+        height: 80px;
+    }
+
+    .profile-bubble h2 {
+        font-size: 20px;
+    }
+
+    .profile-details p {
+        font-size: 12px;
+    }
+
+    .character-container img {
+        width: 180px;
+    }
+
+    .character-name {
+        top: 65%;
+        font-size: 14px;
+    }
+
+    .galleryFriends img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .gallery img, .galleryBilder img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .dynamic-container {
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+    .Dynamic-item {
+        width: calc(33.33% - 10px);
+    }
 }
 
-.profile-bubble h2 {
-    margin: 0; /* Null Abstand oben und unten für h2 */
-    font-size: 24px;
-}
-
-.profile-bubble .profile-details {
-    margin-left: 110px; /* Abstand zum Bild und h2 */
-}
-
-.profile-bubble p {
-    margin: 5px 0; /* Abstand oben und unten für Absatz */
-    font-size: 14px; /* Schriftgröße für die Absätze */
-    color: #666; /* Farbe für den Text */
-    transform: translateX(-2%);
-}
-
-.stat-container {
-    position: absolute;
-    top: 52%;
-    left: 2%;
-    display: flex;
-}
-
-
-.character-container {
-    position: absolute;
-    top: 52%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-}
-
-.character-container img {
-    width: 280px;
-    height: auto;
-}
-
-.character-name {
-    position: absolute;
-    top: 70%;
-    left: 55%;
-    transform: translate(-50%, -50%);
-    background: white;
-    border-radius: 10px;
-    padding: 0px 10px;
-    display: inline-block;
-    margin-top: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.Friends-container {
-    display: flex; /* Use flexbox for layout */
-    flex-direction: column; /* Arrange images in columns */
-    align-items: center; /* Center images horizontally */
-    justify-content: space-between; /* Spacing between galleryBilder and gallery */
-    position: absolute;
-    right: 450px;
-    top: 20px;
-    text-align: center;
-}
-
-.galleryFriends {
-    display: flex; /* Use flexbox for layout */
-    align-items: center; /* Center images horizontally */
-    text-align: center;
-}
-
-.galleryFriends img {
-    width: 120px;
-    height: 120px;
-    margin: 5px 0;
-    border-radius: 10px;
-    border: 3px solid #9589e2; /* Adjust border thickness as needed */
-}
-
-.gallery-container {
-    display: flex; /* Use flexbox for layout */
-    justify-content: space-between; /* Spacing between galleryBilder and gallery */
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    text-align: center;
-}
-
-.gallery {
-    display: flex;
-    flex-direction: column; /* Arrange images in columns */
-    align-items: center; /* Center images horizontally */
-    transform: translateX(-80px); /* Adjust this value to move gallery to the left */
-    margin-top: 70px; /* Adjust this value to move gallery down */
-}
-
-.galleryBilder {
-    display: flex;
-    flex-direction: column; /* Arrange images in columns */
-    align-items: center; /* Center images horizontally */
-    transform: translateX(-110px); /* Adjust this value to move gallery to the left */
-}
-
-.gallery img {
-    width: 80px;
-    height: 80px;
-    margin: 5px 0;
-    border-radius: 10px;
-    border: 3px solid white; /* Adjust border thickness as needed */
-}
-
-.galleryBilder img {
-    width: 140px;
-    height: 140px;
-    margin: 5px 0;
-    border-radius: 10px;
-    border: 3px solid white; /* Adjust border thickness as needed */
-}
-
-
+/* Wellen bleiben unverändert! */
 .waves {
     position: absolute;
     bottom: 0;
@@ -212,71 +308,4 @@ body {
     bottom: 0;
     transform: translateY(10%);
     width: 100%;
-}
-
-.chart-info {
-    width: 35%; /* Adjust as needed */
-    margin-left: 550px; /* Add some margin to the left */
-    transform: translateY(-30%);
-}
-
-
-.dynamic-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin-top: 20px; /* Beispiel: Abstand nach oben */
-}
-
-.Dynamic-item {
-    width: calc(25% - 20px); /* Beispiel: 4 Bilder pro Reihe, mit Abstand */
-    margin-bottom: 20px; /* Beispiel: Abstand zwischen den Bildern */
-}
-
-/* Media Query für kleine Bildschirme (Handys) */
-@media (max-width: 480px) {
-    .tab {
-        padding: 8px 16px; /* Kleinere Padding für Tabs */
-    }
-
-    .profile-image {
-        width: 80px; /* Kleinere Profilbildgröße */
-        height: 80px;
-    }
-
-    .profile-bubble h2 {
-        font-size: 20px; /* Kleinere Schriftgröße für h2 */
-    }
-
-    .profile-bubble .profile-details {
-        margin-left: 90px; /* Weniger Abstand zu Bild und h2 */
-    }
-
-    .profile-bubble p {
-        font-size: 12px; /* Kleinere Schriftgröße für Absätze */
-    }
-
-    .character-container img {
-        width: 200px; /* Kleinere Charakterbildgröße */
-    }
-
-    .character-name {
-        top: 65%; /* Höhere Position für den Namen */
-        font-size: 16px; /* Kleinere Schriftgröße für den Namen */
-    }
-
-    .galleryFriends img {
-        width: 100px; /* Kleinere Größe für Freunde-Bilder */
-        height: 100px;
-    }
-
-    .gallery img {
-        width: 60px; /* Kleinere Größe für Galeriebilder */
-        height: 60px;
-    }
-
-    .galleryBilder img {
-        width: 100px; /* Kleinere Größe für Galeriebilder */
-        height: 100px;
-    }
 }
