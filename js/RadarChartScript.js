@@ -39,7 +39,7 @@ if (ocName === 'Aletea') {
     dataBackC = 'rgba(255, 99, 132, 0.2)';
     dataLineC = 'rgba(255, 99, 132, 1)';
 }  else if (ocName === 'Lumiel') {
-    data = [0, 60, 80, 20, 60, 100, 90, 70, 50, 50];
+    data = [60, 40, 80, 70, 50, 20, 90, 40, 60, 10];
     dataBackC = 'rgba(230, 230, 250, 0.2)'; // Lilac with 20% opacity
     dataLineC = 'rgba(200, 162, 200, 1)'; // lilac
 }  else if (ocName === 'Mitsu') {

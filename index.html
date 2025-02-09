@@ -1,129 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OC PokeDex</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <title>Character Selection</title>
+  <link rel="stylesheet" href="css/selctionStyle.css">
 </head>
 <body>
-  <div class="pokedex">
-    <div class="pokedex-screen">
-      <div class="pokedex-header">
-        <h1>OC PokeDex</h1>
+  <div class="container">
+    <div class="name-container">
+      Charakter Name
+    </div>
+    
+    <div class="main-content">
+      <div class="character-details-container">
+        <h3>Character-Details</h3>
+        <li>Name: Mitsu</li>
+        <li>Age: 17</li>
+        <li>Height: 1,69</li>
+        <li>Specie: Tiger</li>
+        <li>Birthday: March 3</li>
+        <li>Gender: non-binary</li>
+        <li>Sexuality: Pansexual</li>
+        <li>MTBI: ISTP</li>
+        <li>Zodiac: Pisces</li>
+        <br>
+        <button class="back-button" id="backButton">More Information</button>
       </div>
-      <div class="pokedex-body">
-        <div class="pokedex-cards">
-          <div class="pokedex-card" onclick="ToDetailPage('Class')">
-            <img src="bilder/GenjuuSchool_2.1.png" alt="OC 1" class="pokedex-img">
-            <div class="pokedex-info">
-              <h2>Class 8A</h2>
-            </div>
-          </div>
-          <div class="pokedex-card" onclick="ToDetailPage('Aletea')">
-            <img src="alle_png/Aletea2.png" alt="OC 2" class="pokedex-img">
-            <div class="pokedex-info">
-              <h2>Aletea</h2>
-            </div>
-          </div>
-          <div class="pokedex-card" onclick="ToDetailPage('Ariko')">
-            <img src="alle_png/Ariko2.png" alt="OC 3" class="pokedex-img">
-            <div class="pokedex-info">
-              <h2>Ariko</h2>
-            </div>
-          </div>
-          <div class="pokedex-card" onclick="ToDetailPage('Chloe')">
-            <img src="alle_png/chloe2.png" alt="OC 4" class="pokedex-img">
-            <div class="pokedex-info">
-              <h2>Chloé</h2>
-            </div>
-          </div>
-          <div class="pokedex-card" onclick="ToDetailPage('Dana')">
-            <img src="alle_png/dana2.png" alt="OC 5" class="pokedex-img">
-            <div class="pokedex-info">
-              <h2>Dana</h2>
-            </div>
-          </div>
-          <div class="pokedex-card" onclick="ToDetailPage('Ethan')">
-            <img src="alle_png/Ethan2.png" alt="OC 6" class="pokedex-img">
-            <div class="pokedex-info">
-              <h2>Ethan</h2>
-            </div>
-          </div>
-          <div class="pokedex-card" onclick="ToDetailPage('Lillith')">
-            <img src="alle_png/Lillith2.png" alt="OC 7" class="pokedex-img">
-            <div class="pokedex-info">
-              <h2>Lillith</h2>
-            </div>
-          </div>
-          <div class="pokedex-card" onclick="ToDetailPage('Louann')">
-            <img src="alle_png/Louann2.png" alt="OC 8" class="pokedex-img">
-            <div class="pokedex-info">
-              <h2>Louann</h2>
-            </div>
-          </div>
-          <div class="pokedex-card" onclick="ToDetailPage('Luke')">
-            <img src="alle_png/luke2.png" alt="OC 9" class="pokedex-img">
-            <div class="pokedex-info">
-              <h2>Luke</h2>
-            </div>
-          </div>
-          <div class="pokedex-card" onclick="ToDetailPage('Lumiel')">
-            <img src="alle_png/Lumiel2.png" alt="OC 10" class="pokedex-img">
-            <div class="pokedex-info">
-              <h2>Lumiel</h2>
-            </div>
-          </div>
-          <div class="pokedex-card" onclick="ToDetailPage('Mitsu')">
-            <img src="alle_png/mitsu2.png" alt="OC 11" class="pokedex-img">
-            <div class="pokedex-info">
-              <h2>Mitsu</h2>
-            </div>
-          </div>
-          <div class="pokedex-card" onclick="ToDetailPage('Niall')">
-            <img src="alle_png/niall-vampire2.png" alt="OC 12" class="pokedex-img">
-            <div class="pokedex-info">
-              <h2>Niall</h2>
-            </div>
-          </div>
-          <div class="pokedex-card" onclick="ToDetailPage('Pyronus')">
-            <img src="alle_png/Pyronus2.png" alt="OC 13" class="pokedex-img">
-            <div class="pokedex-info">
-              <h2>Pyronus</h2>
-            </div>
-          </div>
-          <div class="pokedex-card" onclick="ToDetailPage('Rebecca')">
-            <img src="alle_png/Rebecca2.jpg" alt="OC 14" class="pokedex-img">
-            <div class="pokedex-info">
-              <h2>Rebecca</h2>
-            </div>
-          </div>
-          <div class="pokedex-card" onclick="ToDetailPage('Sabrina')">
-            <img src="alle_png/sabrina2.png" alt="OC 15" class="pokedex-img">
-            <div class="pokedex-info">
-              <h2>Sabrina</h2>
-            </div>
-          </div>
-          <div class="pokedex-card" onclick="ToDetailPage('Tyler')">
-            <img src="alle_png/tyler2.png" alt="OC 16" class="pokedex-img">
-            <div class="pokedex-info">
-              <h2>Tyler</h2>
-            </div>
-          </div>
-          <!-- Weitere OC-Karten hier einfügen -->
+      
+      <div class="carousel-container">
+        <button class="carousel-arrow left" onclick="moveLeft()">&#9664;</button>
+        <div class="carousel">
+          <img src="alle_png/Aletea.png" class="character" id="Aletea" alt="Character 1">
+          <img src="alle_png/Ariko.png" class="character" id="Ariko" alt="Character 2">
+          <img src="alle_png/dana.png" class="character" id="Dana" alt="Character 4">
+          <img src="alle_png/Ethan.png" class="character" id="Ethan" alt="Character 5">
+          <img src="alle_png/Lillith.png" class="character" id="Lillith" alt="Character 6">
+          <img src="alle_png/tyler.png" class="character" id="Tyler" alt="Character 7">
+          <img src="alle_png/luke.png" class="character" id="Luke" alt="Character 8">
+          <img src="alle_png/Lumiel.png" class="character" id="Lumiel" alt="Character 9">
+          <img src="alle_png/mitsu.png" class="character" id="Mitsu" alt="Character 10">
+          <img src="alle_png/Pyronus.png" class="character" id="Pyronus" alt="Character 12">
+          <img src="alle_png/rebecca.png" class="character" id="Rebecca" alt="Character 13">
+          <img src="alle_png/sabrina.png" class="character" id="Sabrina" alt="Character 14">
+          <img src="alle_png/louann.png" class="character" id="Louann" alt="Character 15">
+          <img src="alle_png/louann.png" class="character" id="Yuna" alt="Character 16">
+          <img src="alle_png/louann.png" class="character" id="Shouta" alt="Character 17">
+          <img src="alle_png/louann.png" class="character" id="Renji" alt="Character 18">
+          <img src="alle_png/louann.png" class="character" id="Kagami" alt="Character 19">
         </div>
+        <button class="carousel-arrow right" onclick="moveRight()">&#9654;</button>
       </div>
+      
     </div>
   </div>
 
-  <script>
-    function ToDetailPage(ocName) {
-      if(ocName=='Lumiel'){
-        window.location.href = 'Lumiel.html';
-      } else {
-        window.location.href = 'detail_page.html?name=' + ocName;
-      }
-    }
-  </script>
+
+  <script src="js/selctionJs.js"></script>
 </body>
 </html>
+

@@ -151,7 +151,7 @@
 
 </head>
 <body>
-    <a href="javascript:history.back()" class="back-button">&#8592;</a>
+    <a href="#" class="back-button" id="backButton">&#8592;Back</a>
 
     <div class="header-text">Mitsu</div>
     <div class="dashboard">
@@ -172,15 +172,19 @@
                 </div>
                 <div class="stat-container">
                     <img src="motivation-icon.png" alt="Renji">
-                    <div class="stat"><div style="width: 60%;"></div>Friend</div>
+                    <div class="stat"><div style="width: 53%;"></div>Friend</div>
                 </div>
                 <div class="stat-container">
                     <img src="motivation-icon.png" alt="Shouta">
-                    <div class="stat"><div style="width: 68%;"></div>Friend</div>
+                    <div class="stat"><div style="width: 64%;"></div>Friend</div>
                 </div>
                 <div class="stat-container">
                     <img src="alle_png/Louann2.png" alt="Louann">
                     <div class="stat"><div style="width: 10%; background: rgb(255, 85, 85)"></div>Friend</div>
+                </div>
+                <div class="stat-container">
+                    <img src="alle_png/Ariko2.png" alt="Ariko">
+                    <div class="stat"><div style="width: 30%;"></div>Friend</div>
                 </div>
             </div>
         </div>
@@ -214,16 +218,15 @@
 
 
 
-
     <script>
         const ctx = document.getElementById('radarChart').getContext('2d');
         new Chart(ctx, {
             type: 'radar',
             data: {
-                labels: ['IQ', 'Magical talent', 'Mental', 'Velocity', 'Stamina', 'Strength', 'Creativity', 'Social skills'],
+                labels: ['IQ', 'Magical talent', 'Mental', 'Velocity', 'Stamina', 'Strength', 'Social skills', 'Creativity'],
                 datasets: [{
                     label: 'Stats',
-                    data: [80, 70, 60, 75, 85, 56, 34, 45],
+                    data: [64, 40, 65, 80, 85, 91, 40, 35],
                     backgroundColor: 'rgba(236, 102, 6, 0.1',
                     borderColor: 'rgba(236, 102, 6, 1)',
                     borderWidth: 1
@@ -252,6 +255,10 @@
                 }
             }
         });
+        document.getElementById('backButton').addEventListener('click', function() {
+            window.location.href = 'index.html';  
+        });
+
     </script>
 </body>
 </html>
