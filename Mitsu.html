@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gaming Dashboard</title>
+    <title>Mitsu Character Board</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         body {
@@ -17,16 +17,36 @@
         }
         .dashboard {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1200px;
+        }
+        .left, .right {
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .middle {
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         .card {
             background: #222;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+            box-shadow: 0 0 5px rgba(0, 255, 0, 0.3);
             text-align: center;
+            width: 100%;
+        }
+        .transparent-card {
+            background: transparent;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            position: relative;
         }
         .stats-container {
             display: flex;
@@ -35,8 +55,21 @@
             gap: 10px;
             margin-top: 10px;
         }
-        .stat {
+        .stat-container {
+            background: #222;
+            padding: 10px;
+            border-radius: 10px;
             width: 80%;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .stat-container img {
+            width: 30px;
+            height: 30px;
+        }
+        .stat {
+            width: 100%;
             background: #333;
             border-radius: 5px;
             overflow: hidden;
@@ -46,12 +79,11 @@
             background: limegreen;
         }
         .tasks {
-            background: #222;
+            background: transparent;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
             margin-top: 20px;
-            width: 300px;
+            width: 100%;
         }
         .tasks ul {
             list-style: none;
@@ -66,49 +98,77 @@
         img {
             max-width: 200px;
             border-radius: 10px;
+            border: 1px solid black;
         }
-        canvas {
-            max-width: 400px;
+        .xp-container {
+            background: #222;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            width: 100%;
+            text-align: center;
+        }
+        .header-text {
+            font-size: 2em;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
         }
     </style>
 </head>
 <body>
+    <div class="header-text">Mitsu</div>
     <div class="dashboard">
-        <div class="card">
-            <h2>Mitsu</h2>
-            <img src="alle_png/mitsu.png" alt="Charakter 1">
-            <div class="stats-container">
-                <div class="stat"><div style="width: 80%;"></div>HP</div>
-                <div class="stat"><div style="width: 70%;"></div>Concentration</div>
-                <div class="stat"><div style="width: 60%;"></div>Motivation</div>
+        <div class="left">
+            <div class="card">
+                <img src="alle_png/mitsu.png" alt="Charakter 1">
+                <div class="stat-container">
+                    <img src="alle_png/sabrina2.png" alt="Ex-Friend">
+                    <div class="stat"><div style="width: 80%; background: red"></div>Ex-Friend</div>
+                </div>
+                <div class="stat-container">
+                    <img src="alle_png/Kagami.jpg" alt="Kagami">
+                    <div class="stat"><div style="width: 70%;"></div>Friend</div>
+                </div>
+                <div class="stat-container">
+                    <img src="motivation-icon.png" alt="Yuna">
+                    <div class="stat"><div style="width: 90%;"></div>Friend & Crush</div>
+                </div>
             </div>
         </div>
-        <div class="card">
-            <h2>Fähigkeiten</h2>
-            <canvas id="radarChart"></canvas>
+        <div class="middle">
+            <div class="transparent-card">
+                <canvas id="radarChart"></canvas>
+                <img src="bilder/mitsu2023.png" alt="Background" style="width:100%; max-width:400px;">
+            </div>
         </div>
-    </div>
-    <div class="tasks">
-        <h2>Aufgaben</h2>
-        <ul>
-            <li>Yoga & Flexibilität</li>
-            <li>Meditation & Innere Ruhe</li>
-            <li>Trainieren mit Freunden</li>
-            <li>Script üben & Resilienz</li>
-            <li>Räume aufräumen & Umgebung</li>
-        </ul>
+        <div class="right">
+            <div class="tasks">
+                <h2>Aufgaben</h2>
+                <ul>
+                    <li>Yoga & Flexibilität</li>
+                    <li>Meditation & Innere Ruhe</li>
+                    <li>Trainieren mit Freunden</li>
+                    <li>Script üben & Resilienz</li>
+                    <li>Räume aufräumen & Umgebung</li>
+                </ul>
+            </div>
+            <div class="xp-container">
+                <h2>Current XP: 1334</h2>
+            </div>
+        </div>
     </div>
     <script>
         const ctx = document.getElementById('radarChart').getContext('2d');
         new Chart(ctx, {
             type: 'radar',
             data: {
-                labels: ['Physisch', 'Intelligenz', 'Spirituell', 'Psyche', 'Kern'],
+                labels: ['IQ', 'Magical talent', 'Mental', 'Velocity', 'Stamina', 'Strength', 'Creativity', 'Social skills'],
                 datasets: [{
                     label: 'Stats',
-                    data: [80, 70, 60, 75, 85],
-                    backgroundColor: 'rgba(0, 255, 0, 0.2)',
-                    borderColor: 'rgba(0, 255, 0, 1)',
+                    data: [80, 70, 60, 75, 85, 56, 34, 45],
+                    backgroundColor: 'rgba(0, 255, 0, 0.1)',
+                    borderColor: 'rgba(0, 255, 0, 0.7)',
                     borderWidth: 2
                 }]
             },
