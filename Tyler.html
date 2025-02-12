@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tyler Character Board</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="css/Characterdetail.css">
+    <!-- Google Fonts: Merriweather (Serifen-Schriftart) -->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        .card {
+            background: #222;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgb(255, 71, 111);  /*Farbe je nach Character ändern*/
+            text-align: center;
+            width: 100%;
+        }
+        .header-text {
+            font-family: 'Merriweather', serif; 
+            font-size: 3em;  
+            font-weight: 700;  
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ff88b0;  /* Leuchtendes */
+            text-shadow: 
+                0 0 5px rgb(255, 71, 111), /* Schlagschatten */
+                0 0 10px rgb(255, 71, 111),
+                0 0 15px rgb(255, 71, 111),
+        }
+    </style>
+
+
+
+
+</head>
+<body>
+    <a href="#" class="back-button" id="backButton">&#8592;Back</a>
+
+    <div class="header-text">Tyler</div>
+    <div class="dashboard">
+        <div class="left">
+            <div class="card">
+                <img src="alle_png/tyler2.png" alt="Charakter 1">
+                <div class="stat-container">
+                    <img src="alle_png/luke2.png" alt="Renji">
+                    <div class="stat"><div style="width: 80%;"></div>Friend</div>
+                </div>
+                <div class="stat-container">
+                    <img src="alle_png/chloe2.png" alt="Shouta">
+                    <div class="stat"><div style="width: 75%;"></div>Friend</div>
+                </div>
+                <div class="stat-container">
+                    <img src="alle_png/Rebecca2.jpg" alt="Kagami">
+                    <div class="stat"><div style="width: 60%;"></div>Friend</div>
+                </div>
+                <div class="stat-container">
+                    <img src="alle_png/dana2.png" alt="Lumiel">
+                    <div class="stat"><div style="width: 75%;"></div>Friend</div>
+                </div>
+                <div class="stat-container">
+                    <img src="alle_png/louann2.png" alt="GF">
+                    <div class="stat"><div style="width: 65%;"></div>Friend</div>
+                </div>
+                <div class="stat-container">
+                    <img src="alle_png/icon-.png" alt="GF">
+                    <div class="stat"><div style="width: 70%; background: rgb(255, 123, 224);"></div>Girlfriend</div>
+                </div>
+            </div>
+        </div>
+        <div class="middle">
+            <div class="transparent-card">
+                <canvas id="radarChart"></canvas>
+                <img src="alle_png/tyler.png" alt="Background" style="width:100%; max-width:400px;">
+            </div>
+        </div>
+        <div class="right">
+            <div class="tasks">
+                <h2>Attributes</h2>
+                <ul>
+                    <li>Age: 18</li>
+                    <li>Height: 1,78</li>
+                    <li>Specie: Devil</li>
+                    <li>Birthday: April 10</li>
+                    <li>Gender: male</li>
+                    <li>Sexuality: Heterosexual</li>
+                    <li>MTBI: ESTJ</li>
+                    <li>Zodiac: Aries ♈</li>
+                </ul>
+            </div>
+            <div class="xp-container">
+                <h2>Backstory</h2>
+                <p>The parents were extremely poor. The war destroyed their small house, and their family of four was forced to live on the streets. One day, mysterious beings arrived and offered a large sum of money for Tyler and his little sister. The parents believed it was the best option for their children and gave them away. (They were killed shortly after—something the children never found out.)  
+
+                    The buyers took the two to a factory specializing in weapons and special equipment. There, they had to work all day. Tyler befriended a girl who worked beside him after she reached out to him and held his hand. She helped them get through the day and meet their quotas—because anyone who disappointed the overseers was beaten. Tyler deeply admired the girl and was grateful for how well she cared for them, even though she was still just a child herself—about the same age as Tyler at the time.  
+                    
+                    Then, one day, his sister collapsed, coughing violently and gasping for air. The poisonous gases in the factory had made her gravely ill. That was the moment Tyler realized they had no choice but to escape—if they stayed, his little sister would die. The girl understood immediately and began planning their escape.  
+                    
+                    During their attempt, they were discovered. Magic bullets were fired at them. The girl was struck fatally, but Tyler only spared her a brief glance as she fell to the ground. Fear took over, and he ran, holding his sister in his arms. They were so close—just one last gate to the courtyard stood between them and freedom.  
+                    
+                    But then, his sister collapsed beside him and stopped moving. The gate was slowly closing. Tyler clenched his eyes shut, and without looking back, he ran through it, running for as long as his legs would carry him—until they finally gave out beneath him.  
+                    
+                    When he woke up, he was in the infirmary at the academy.  
+                    
+                    There, Juliana helped him adjust to his new life. After some time, Tyler asked her to go with him. And so, they left together.</p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        const ctx = document.getElementById('radarChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'radar',
+            data: {
+                labels: ['IQ', 'Magical talent', 'Mental', 'Velocity', 'Stamina', 'Strength', 'Social skills', 'Creativity'],
+                datasets: [{
+                    label: 'Stats',
+                    data: [64, 67, 27, 60, 75, 67, 65, 57],
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',     //Ändern je nach Character
+                    borderColor: 'rgb(255, 71, 111)',          //Ändern je nach Character
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    r: {
+                        angleLines: { 
+                            display: true, 
+                            borderColor: 'rgba(255, 246, 246, 0.46)' 
+                        },
+                        grid: {
+                            color: 'rgb(250, 238, 223)' 
+                        },
+                        ticks: {
+                            font: {
+                                size: 10 
+                            },
+                            stepSize: 20, 
+                        },
+                        suggestedMin: 0,
+                        suggestedMax: 100
+                    }
+                }
+            }
+        });
+        document.getElementById('backButton').addEventListener('click', function() {
+            window.location.href = 'index.html';  
+        });
+
+    </script>
+</body>
+</html>

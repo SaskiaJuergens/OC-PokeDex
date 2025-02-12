@@ -8,16 +8,16 @@ ocName= 'Aletea';
 
 if (ocName === 'Aletea') {
     data = [20, 40, 60, 80, 40, 60, 100, 40, 60, 50]; // Beispielwerte, bitte ersetzen
-    dataBackC = 'rgba(205, 133, 63, 0.2)'; // Light brown with 20% opacity
-    dataLineC = 'rgba(255, 140, 0, 1)'; // Orange
+    dataBackC = 'rgba(255, 246, 246, 0.46)'; // Light brown with 20% opacity
+    dataLineC = 'rgb(250, 238, 223)'; // Orange
 } else if (ocName === 'Ariko') {
     data = [40, 60, 80, 20, 60, 80, 90, 70, 50, 50];
     dataBackC = 'rgba(128, 128, 128, 0.2)'; // Gray with 20% opacity
     dataLineC = 'rgba(128, 128, 128, 1)'; // Gray
 } else if (ocName === 'Chloe') {
     data = [45, 36, 80, 26, 60, 80, 57, 70, 69, 50];
-    dataBackC = 'rgba(173, 216, 230, 0.2)';
-    dataLineC = 'rgba(173, 216, 230, 1)';
+    dataBackC = 'rgba(52, 204, 255, 0.61)';
+    dataLineC = 'rgb(126, 211, 240)';
 } else if (ocName === 'Dana') {
     data = [0, 60, 80, 20, 60, 100, 90, 70, 50, 50];
     dataBackC = 'rgba(139, 69, 19, 0.2)'; // Brown with 20% opacity
@@ -65,7 +65,7 @@ if (ocName === 'Aletea') {
 } else if (ocName === 'Tyler') {
     data = [0, 60, 80, 20, 60, 100, 90, 70, 50, 50];
     dataBackC = 'rgba(255, 99, 132, 0.2)';
-    dataLineC = 'rgba(255, 99, 132, 1)';
+    dataLineC = 'rgb(255, 71, 111)';
 } else {
     // If OC name is neither "Aletea" nor "Luke", do not show the chart
     document.getElementById('radarChart').style.display = 'none';

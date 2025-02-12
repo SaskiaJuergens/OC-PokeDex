@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Louann Character Board</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="css/Characterdetail.css">
+    <!-- Google Fonts: Merriweather (Serifen-Schriftart) -->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        .card {
+            background: #222;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 5px #ff45d4ee;  /*Farbe je nach Character ändern*/
+            text-align: center;
+            width: 100%;
+        }
+        .header-text {
+            font-family: 'Merriweather', serif; 
+            font-size: 3em;  
+            font-weight: 700;  
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ffb9efee;  /* Leuchtendes */
+            text-shadow: 
+                0 0 5px #ff45d4ee, /* Schlagschatten */
+                0 0 10px #ff45d4ee,
+                0 0 15px #ff45d4ee,
+        }
+    </style>
+
+
+
+
+</head>
+<body>
+    <a href="#" class="back-button" id="backButton">&#8592;Back</a>
+
+    <div class="header-text">Louann</div>
+    <div class="dashboard">
+        <div class="left">
+            <div class="card">
+                <img src="alle_png/Louann2.png" alt="Charakter 1">
+                <div class="stat-container">
+                    <img src="alle_png/Rebecca2.jpg" alt="Kagami">
+                    <div class="stat"><div style="width: 95%; background: rgb(255, 123, 224);"></div>Friend & Crush</div>
+                </div>
+                <div class="stat-container">
+                    <img src="alle_png/luke2.png" alt="Renji">
+                    <div class="stat"><div style="width: 70%;"></div>Friend</div>
+                </div>
+                <div class="stat-container">
+                    <img src="alle_png/tyler2.png" alt="Shouta">
+                    <div class="stat"><div style="width: 75%;"></div>Friend</div>
+                </div>
+                <div class="stat-container">
+                    <img src="alle_png/dana2.png" alt="Lumiel">
+                    <div class="stat"><div style="width: 75%;"></div>Friend</div>
+                </div>
+                <div class="stat-container">
+                    <img src="alle_png/chloe2.png" alt="GF">
+                    <div class="stat"><div style="width: 80%;"></div>Friend</div>
+                </div>
+            </div>
+        </div>
+        <div class="middle">
+            <div class="transparent-card">
+                <canvas id="radarChart"></canvas>
+                <img src="alle_png/louann.png" alt="Background" style="width:100%; max-width:400px;">
+            </div>
+        </div>
+        <div class="right">
+            <div class="tasks">
+                <h2>Attributes</h2>
+                <ul>
+                    <li>Age: 17</li>
+                    <li>Height: 1,59</li>
+                    <li>Specie: Unicorn</li>
+                    <li>Birthday: April 12</li>
+                    <li>Gender: female</li>
+                    <li>Sexuality: Demisexual</li>
+                    <li>MTBI: ESFP</li>
+                    <li>Zodiac: Aries</li>
+                </ul>
+            </div>
+            <div class="xp-container">
+                <h2>Backstory</h2>
+                <p>She comes from the **Rainbow Unicorn Royal House**, which has been trying to wipe out races like tigers for a long time and is at war with other powerful beings.  
+
+                    Even among unicorns, **Louann** was born with extraordinary abilities—specifically, the power of **teleportation**. As a child, she was primarily trained to control this unique power while also being taught that, as a woman, she should stay out of politics and obey her father. This was meant to ensure that she would one day fully master her abilities and become useful in the war.  
+                    
+                    At the same time, she was promised to a unicorn man from the **Frost Unicorn House**, who was already in his thirties. Their union and the birth of heirs were meant to merge their houses, with the hope that their offspring would inherit their powerful abilities.  
+                    
+                    However, **Louann barely managed to escape using her teleportation powers**. She wandered for several days, lost and alone, until she finally reached an academy and pleaded for entry.</p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        const ctx = document.getElementById('radarChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'radar',
+            data: {
+                labels: ['IQ', 'Magical talent', 'Mental', 'Velocity', 'Stamina', 'Strength', 'Social skills', 'Creativity'],
+                datasets: [{
+                    label: 'Stats',
+                    data: [55, 65, 45, 70, 76, 30, 85, 80],
+                    backgroundColor: 'rgba(255, 192, 203, 0.2)',     //Ändern je nach Character
+                    borderColor: 'rgba(255, 192, 203, 1)',          //Ändern je nach Character
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    r: {
+                        angleLines: { 
+                            display: true, 
+                            borderColor: 'rgba(255, 246, 246, 0.46)' 
+                        },
+                        grid: {
+                            color: 'rgb(250, 238, 223)' 
+                        },
+                        ticks: {
+                            font: {
+                                size: 10 
+                            },
+                            stepSize: 20, 
+                        },
+                        suggestedMin: 0,
+                        suggestedMax: 100
+                    }
+                }
+            }
+        });
+        document.getElementById('backButton').addEventListener('click', function() {
+            window.location.href = 'index.html';  
+        });
+
+    </script>
+</body>
+</html>

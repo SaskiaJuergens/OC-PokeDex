@@ -38,3 +38,10 @@ document.addEventListener('keydown', (event) => {
 });
 
 updateCarousel();
+
+
+
+//////////////////////////////////////////go to diffrent html//////////////////////////////////////////////
+document.getElementById('Button').addEventListener('click', function() {
+  window.location.href = 'Mitsu.html';  
+});
