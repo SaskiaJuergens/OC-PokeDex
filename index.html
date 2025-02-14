@@ -47,14 +47,21 @@
       padding: 15px;
       border-radius: 10px;
     }
+    .character-details-container ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    .character-details-container li {
+      margin-bottom: 5px;
+    }
     .carousel-container {
       display: flex;
       align-items: center;
       justify-content: center;
       position: relative;
-      width: 60%;
+      width: 70%;
       overflow: hidden;
-      height: 600px;
+      height: 80vh;
     }
     .carousel {
       display: flex;
@@ -65,35 +72,35 @@
       height: 100%;
     }
     .character {
-      width: 400px;
-      height: 600px;
-      object-fit: contain;
+      width: 80%;
+      height: 80%;
+      object-fit: cover;
       position: absolute;
       transition: transform 0.5s, opacity 0.5s;
       opacity: 0;
     }
     .character.active {
-      transform: scale(1.2) translateX(0);
+      transform: scale(1) translateX(0);
       opacity: 1;
       z-index: 3;
     }
     .character.prev1 {
-      transform: scale(1) translateX(-250px);
+      transform: scale(0.9) translateX(-300px);
       opacity: 0.8;
       z-index: 2;
     }
     .character.prev2 {
-      transform: scale(0.8) translateX(-450px);
+      transform: scale(0.8) translateX(-600px);
       opacity: 0.6;
       z-index: 1;
     }
     .character.next1 {
-      transform: scale(1) translateX(250px);
+      transform: scale(0.9) translateX(300px);
       opacity: 0.8;
       z-index: 2;
     }
     .character.next2 {
-      transform: scale(0.8) translateX(450px);
+      transform: scale(0.8) translateX(600px);
       opacity: 0.6;
       z-index: 1;
     }
@@ -112,6 +119,25 @@
     .carousel-arrow.right {
       right: 10px;
     }
+    .button {
+      background-color: #3700ff;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      margin-top: 20px;
+      width: 100%;
+      text-align: center;
+      /*transition: background 0.3s ease;*/
+    }
+    .button:hover {
+      background-color: #2900cc;
+    }
+    .novel-button {
+      margin-top: 200px;
+    }
   </style>
 </head>
 <body>
@@ -121,60 +147,51 @@
     <div class="main-content">
       <div class="character-details-container">
         <h3>Character-Details</h3>
-        <p id="character-info">Age: 17 | Specie: Tiger</p>  <!--Müssen noch verändert werden je nach character-->
-        <br>
-        <button class="button" id="more-info">More Information</button> <!--Müssen noch verändert werden je nach character anderes ziel html-->
+        <ul id="character-info"></ul>
+        <button class="button" id="more-info">More Information</button>
+        <button class="button novel-button" id="novel-button">To the Novel</button>
       </div>
       
       <div class="carousel-container">
         <button class="carousel-arrow left" onclick="moveLeft()">&#9664;</button>
-        <div class="carousel" id="carousel">
-
-        </div>
+        <div class="carousel" id="carousel"></div>
         <button class="carousel-arrow right" onclick="moveRight()">&#9654;</button>
       </div>
     </div>
   </div>
 
   <script>
-    const characterImages = [
-      "Aletea", "Ariko", "Dana", "Ethan", "Lillith", "Tyler", "Luke", "Lumiel", "Mitsu", "Pyronus", "Rebecca", "Sabrina", "Louann", "Yuna", "Shouta", "Renji", "Kagami"
-    ];
-
-    const carousel = document.getElementById("carousel");
+    const characterImages = ["Aletea", "Ariko", "Dana", "Ethan", "Lillith", "Tyler", "Luke", "Lumiel", "Mitsu", "Pyronus", "Rebecca", "Sabrina", "Louann", "Yuna", "Shouta", "Renji", "Kagami"];
+    const characterDetails = {
+      "Mitsu": { age: 17, height: 1.69, species: "Tiger", birthday:"March 3", gender: "non-binary", sexuality: "Pansexual", MTBI: "ISPT", zoudiac: "Aries", },
+      "Dana": { age: 19, species: "Wolf" },
+      "Ariko": { age: 20, species: "Fox" }
+    };
     let activeIndex = 0;
 
-    function renderCharacters() {
-      carousel.innerHTML = "";
-      characterImages.forEach((char, index) => {
-        const img = document.createElement("img");
-        img.src = `alle_png/${char}.png`;
-        img.classList.add("character");
-        if (index === activeIndex) img.classList.add("active");
-        else if (index === (activeIndex - 1 + characterImages.length) % characterImages.length) img.classList.add("prev1");
-        else if (index === (activeIndex - 2 + characterImages.length) % characterImages.length) img.classList.add("prev2");
-        else if (index === (activeIndex + 1) % characterImages.length) img.classList.add("next1");
-        else if (index === (activeIndex + 2) % characterImages.length) img.classList.add("next2");
-        carousel.appendChild(img);
-      });
+    function updateCharacterDetails() {
+      const detailsContainer = document.getElementById("character-info");
+      const characterName = characterImages[activeIndex];
+      const details = characterDetails[characterName] || {};
+      detailsContainer.innerHTML = `
+        <li>Name: ${characterName}</li>
+        <li>Age: ${details.age || "Unknown"}</li>
+        <li>Height: ${details.height || "Unknown"}</li>
+        <li>Species: ${details.species || "Unknown"}</li>
+        <li>Birthday: ${details.birthday || "Unknown"}</li>
+        <li>Gender: ${details.gender || "Unknown"}</li>
+        <li>Sexuality: ${details.sexuality || "Unknown"}</li>
+        <li>MBTI: ${details.MTBI || "Unknown"}</li>
+        <li>Zoudiac: ${details.zoudiac || "Unknown"}</li>`;
+      document.getElementById("more-info").onclick = function() {
+        window.location.href = characterName + ".html";
+      };
     }
 
-    function moveLeft() {
-      activeIndex = (activeIndex - 1 + characterImages.length) % characterImages.length;
-      renderCharacters();
-    }
-
-    function moveRight() {
-      activeIndex = (activeIndex + 1) % characterImages.length;
-      renderCharacters();
-    }
-
-    document.addEventListener("keydown", (event) => {
-      if (event.key === "ArrowLeft") moveLeft();
-      else if (event.key === "ArrowRight") moveRight();
-    });
-
-    renderCharacters();
+    function moveLeft() { activeIndex = (activeIndex - 1 + characterImages.length) % characterImages.length; updateCharacterDetails(); }
+    function moveRight() { activeIndex = (activeIndex + 1) % characterImages.length; updateCharacterDetails(); }
+    document.addEventListener("keydown", (event) => { if (event.key === "ArrowLeft") moveLeft(); else if (event.key === "ArrowRight") moveRight(); });
+    updateCharacterDetails();
   </script>
 </body>
 </html>
