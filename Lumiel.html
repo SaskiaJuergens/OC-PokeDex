@@ -1,72 +1,158 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Character Profile</title>
-    <link rel="stylesheet" href="css/Lumielstyles.css">
+    <title>Lumiel Character Board</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="css/Characterdetail.css">
+    <!-- Google Fonts: Merriweather (Serifen-Schriftart) -->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        .card {
+            background: #222;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 5px #7e40b07a;  /*Farbe je nach Character ändern*/
+            text-align: center;
+            width: 100%;
+        }
+        .header-text {
+            font-family: 'Merriweather', serif;  /* Serifen-Schriftart */
+            font-size: 3em;  /* Größerer Text */
+            font-weight: 700;  /* Fett */
+            text-align: center;
+            margin-bottom: 20px;
+            color: #9f71c57a;  /* Leuchtendes */
+            text-shadow: 
+                0 0 5px #7e40b07a, /* Schlagschatten */
+                0 0 10px #7e40b07a,
+                0 0 15px #7e40b07a;
+        }
+    </style>
+
+
+
+
 </head>
 <body>
-    <div class="container">
-        <div class="waves">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                <path fill="#8377d4" fill-opacity="0.6" d="M0,96L24,122.7C48,149,96,203,144,208C192,213,240,171,288,160C336,149,384,171,432,154.7C480,139,528,85,576,85.3C624,85,672,139,720,144C768,149,816,107,864,96C912,85,960,107,1008,138.7C1056,171,1104,213,1152,197.3C1200,181,1248,107,1296,96C1344,85,1392,139,1416,165.3L1440,192L1440,320L1416,320C1392,320,1344,320,1296,320C1248,320,1200,320,1152,320C1104,320,1056,320,1008,320C960,320,912,320,864,320C816,320,768,320,720,320C672,320,624,320,576,320C528,320,480,320,432,320C384,320,336,320,288,320C240,320,192,320,144,320C96,320,48,320,24,320L0,320Z"></path>
-            </svg>
-        </div>
+    <a href="#" class="back-button" id="backButton">&#8592;Back</a>
 
-        <div class="waves2">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                <path fill="#6a5acd" fill-opacity="0.8" d="M0,224L24,213.3C48,203,96,181,144,192C192,203,240,245,288,245.3C336,245,384,203,432,165.3C480,128,528,96,576,85.3C624,75,672,85,720,112C768,139,816,181,864,186.7C912,192,960,160,1008,154.7C1056,149,1104,171,1152,160C1200,149,1248,107,1296,96C1344,85,1392,107,1416,117.3L1440,128L1440,320L1416,320C1392,320,1344,320,1296,320C1248,320,1200,320,1152,320C1104,320,1056,320,1008,320C960,320,912,320,864,320C816,320,768,320,720,320C672,320,624,320,576,320C528,320,480,320,432,320C384,320,336,320,288,320C240,320,192,320,144,320C96,320,48,320,24,320L0,320Z"></path>
-            </svg>
-        </div> 
-
-        <div class="content">
-            <div id="profile" class="tabcontent active">
-                <div class="profile-bubble">
-                    <div class="profile-header">
-                        <img src="alle_png/Lumiel2.png" alt="Character" class="profile-image">
-                        <h2>Lumiel</h2>
-                    </div>
-                    <div class="profile-details">
-                        <p>Age:             17</p>
-                        <p>Height:          176 cm</p>
-                        <p>Birthday:        10.01</p>
-                        <p>Specie:          Visionary</p>
-                        <p>Gender/Pronouns: Female she/her</p>
-                        <p>Sexuality:       Heterosexual</p>
-                        <p>Mtbi:            ENTP</p>
-                        <br>
-                        <div class="Backstory-container">
-                            <h2>Backstory</h2>
-                            <p>Lumiel can see the future in ones eyes. Therefore she tries to avoid eye contact.</p>
-                        </div>
-                    </div>
+    <div class="header-text">Lumiel</div>
+    <div class="dashboard">
+        <div class="left">
+            <div class="card">
+                <img src="alle_png/Lumiel2.png" alt="Charakter 1">
+                <div class="stat-container">
+                    <img src="alle_png/Lillith2.png" alt="Kagami">
+                    <div class="stat"><div style="width: 55%;"></div>Friend</div>
+                </div>
+                <div class="stat-container">
+                    <img src="alle_png/Ethan2.png" alt="GF">
+                    <div class="stat"><div style="width: 35%;"></div>Girlfriend</div>
+                </div>
+                <div class="stat-container">
+                    <img src="alle_png/Rebecca2.jpg" alt="Renji">
+                    <div class="stat"><div style="width: 43%;"></div>Friend</div>
+                </div>
+                <div class="stat-container">
+                    <img src="alle_png/niall-vampire2.png" alt="Shouta">
+                    <div class="stat"><div style="width: 50%;"></div>Friend</div>
+                </div>
+                <div class="stat-container">
+                    <img src="alle_png/Ariko2.png" alt="Ariko">
+                    <div class="stat"><div style="width: 50%;"></div>Friend</div>
                 </div>
             </div>
         </div>
-
-        <div id="character" class="character-container">
-            <img src="alle_png/Lumiel.png" alt="Character" class="character-image">
+        <div class="middle">
+            <div class="transparent-card">
+                <canvas id="radarChart"></canvas>
+                <img src="alle_png/Lumiel.png" alt="Background" style="width:100%; max-width:400px;">
+            </div>
         </div>
+        <div class="right">
+            <div class="tasks">
+                <h2>Attributes</h2>
+                <ul>
+                    <li>Age: 17</li>
+                    <li>Height: 1,76</li>
+                    <li>Specie: Seer</li>
+                    <li>Birthday: January 1</li>
+                    <li>Gender: female</li>
+                    <li>Sexuality: Heterosexual</li>
+                    <li>MTBI: ENTP</li>
+                    <li>Zodiac: Capricorns</li>
+                </ul>
+            </div>
+            <div class="xp-container">
+                <h2>Backstory</h2>
+                <p>Her kind of seer once belonged to the high beings. However, her innate ability to see into the future of others by making direct eye contact was declared forbidden.  
 
-        <div class="Friends-container">
-            <h2>Best friends</h2>
-            <div class="galleryFriends">
-                <img src="alle_png/Aletea2.png" alt="Gallery1" class="gallery-image">
-                <img src="alle_png/Lillith2.png" alt="Gallery2" class="gallery-image">
-            </div> 
-        </div>
-
-        <div class="chart-info center">
-            <div style="width: 70%;">
-                <canvas id="radarChart" width="400" height="400"></canvas>
-            </div>      
+                    At the beginning of the war, her race was labeled as **"illegal"**, and most of them perished in a campaign led by various houses of high beings and a few other factions.  
+                    
+                    Lumiel was taught about this situation on **Everdawn**. Since childhood, she has known nothing but the Academy—a place that keeps all its inhabitants hidden from the outside world and the war.</p>
+            </div>
         </div>
     </div>
 
-    <script src="js/Lumielscript.js"></script>
-    
+
+
+
+    <script>
+        const ctx = document.getElementById('radarChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'radar',
+            data: {
+                labels: ['IQ', 'Magical talent', 'Mental', 'Velocity', 'Stamina', 'Strength', 'Social skills', 'Creativity'],
+                datasets: [{
+                    label: 'Stats',
+                    data: [76, 70, 45, 30, 37, 20, 23, 76],
+                    backgroundColor: 'rgba(126, 64, 176, 0.48)',
+                    borderColor: 'rgba(200, 162, 200, 1)', 
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    r: {
+                        angleLines: { 
+                            display: true, 
+                            borderColor: 'rgba(255, 246, 246, 0.46)' 
+                        },
+                        grid: {
+                            color: 'rgb(250, 238, 223)' 
+                        },
+                        ticks: {
+                            font: {
+                                size: 10 
+                            },
+                            stepSize: 20, 
+                        },
+                        suggestedMin: 0,
+                        suggestedMax: 100
+                    }
+                }
+            }
+        });
+        document.getElementById('backButton').addEventListener('click', function() {
+            window.location.href = 'index.html';  
+        });
+
+    </script>
 </body>
 </html>
+ 
+<!--<div class="waves">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#8377d4" fill-opacity="0.6" d="M0,96L24,122.7C48,149,96,203,144,208C192,213,240,171,288,160C336,149,384,171,432,154.7C480,139,528,85,576,85.3C624,85,672,139,720,144C768,149,816,107,864,96C912,85,960,107,1008,138.7C1056,171,1104,213,1152,197.3C1200,181,1248,107,1296,96C1344,85,1392,139,1416,165.3L1440,192L1440,320L1416,320C1392,320,1344,320,1296,320C1248,320,1200,320,1152,320C1104,320,1056,320,1008,320C960,320,912,320,864,320C816,320,768,320,720,320C672,320,624,320,576,320C528,320,480,320,432,320C384,320,336,320,288,320C240,320,192,320,144,320C96,320,48,320,24,320L0,320Z"></path>
+    </svg>
+</div>
 
+<div class="waves2">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#6a5acd" fill-opacity="0.8" d="M0,224L24,213.3C48,203,96,181,144,192C192,203,240,245,288,245.3C336,245,384,203,432,165.3C480,128,528,96,576,85.3C624,75,672,85,720,112C768,139,816,181,864,186.7C912,192,960,160,1008,154.7C1056,149,1104,171,1152,160C1200,149,1248,107,1296,96C1344,85,1392,107,1416,117.3L1440,128L1440,320L1416,320C1392,320,1344,320,1296,320C1248,320,1200,320,1152,320C1104,320,1056,320,1008,320C960,320,912,320,864,320C816,320,768,320,720,320C672,320,624,320,576,320C528,320,480,320,432,320C384,320,336,320,288,320C240,320,192,320,144,320C96,320,48,320,24,320L0,320Z"></path>
+    </svg>
+</div> -->

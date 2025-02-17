@@ -14,7 +14,7 @@
             background: #222;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 0 5px #ff45d4ee;  /*Farbe je nach Character ändern*/
+            box-shadow: 0 0 5px #9da463bd;  /*Farbe je nach Character ändern*/
             text-align: center;
             width: 100%;
         }
@@ -24,11 +24,11 @@
             font-weight: 700;  
             text-align: center;
             margin-bottom: 20px;
-            color: #ffb9efee;  /* Leuchtendes */
+            color: #d3d7b1c6;  /* Leuchtendes */
             text-shadow: 
-                0 0 5px #ff45d4ee, /* Schlagschatten */
-                0 0 10px #ff45d4ee,
-                0 0 15px #ff45d4ee;
+                0 0 5px #9da463bd /* Schlagschatten */
+                0 0 10px #9da463bd,
+                0 0 15px #9da463bd;
         }
     </style>
 
@@ -43,58 +43,55 @@
     <div class="dashboard">
         <div class="left">
             <div class="card">
-                <img src="alle_png/Louann2.png" alt="Charakter 1">
+                <img src="alle_png/sabrina2.png" alt="Charakter 1">
                 <div class="stat-container">
-                    <img src="alle_png/Rebecca2.jpg" alt="Kagami">
-                    <div class="stat"><div style="width: 95%; background: rgb(255, 123, 224);"></div>Friend & Crush</div>
+                    <img src="alle_png/Pyronus2.png" alt="Kagami">
+                    <div class="stat"><div style="width: 75%; background: rgb(255, 123, 224);"></div>Ex-Boyfriend</div>
                 </div>
                 <div class="stat-container">
-                    <img src="alle_png/luke2.png" alt="Renji">
-                    <div class="stat"><div style="width: 70%;"></div>Friend</div>
+                    <img src="alle_png/mitsu2.png" alt="Renji">
+                    <div class="stat"><div style="width: 50%; background: rgb(255, 85, 85)"></div>Ex-Friend</div>
                 </div>
                 <div class="stat-container">
-                    <img src="alle_png/tyler2.png" alt="Shouta">
-                    <div class="stat"><div style="width: 75%;"></div>Friend</div>
+                    <img src="alle_png/Ariko2.png" alt="Shouta">
+                    <div class="stat"><div style="width: 25%; background: rgb(255, 85, 85)"></div>Friend</div>
                 </div>
                 <div class="stat-container">
                     <img src="alle_png/dana2.png" alt="Lumiel">
-                    <div class="stat"><div style="width: 75%;"></div>Friend</div>
+                    <div class="stat"><div style="width: 25%; background: rgb(255, 85, 85)"></div>Friend</div>
                 </div>
                 <div class="stat-container">
-                    <img src="alle_png/chloe2.png" alt="GF">
-                    <div class="stat"><div style="width: 80%;"></div>Friend</div>
+                    <img src="alle_png/Kagami2.png" alt="GF">
+                    <div class="stat"><div style="width: 40%; background: rgb(255, 85, 85)"></div>Friend</div>
                 </div>
             </div>
         </div>
         <div class="middle">
             <div class="transparent-card">
                 <canvas id="radarChart"></canvas>
-                <img src="alle_png/louann.png" alt="Background" style="width:100%; max-width:400px;">
+                <img src="alle_png/sabrina.png" alt="Background" style="width:100%; max-width:400px;">
             </div>
         </div>
         <div class="right">
             <div class="tasks">
                 <h2>Attributes</h2>
                 <ul>
-                    <li>Age: 17</li>
-                    <li>Height: 1,59</li>
-                    <li>Specie: Unicorn</li>
-                    <li>Birthday: April 12</li>
+                    <li>Age: 18</li>
+                    <li>Height: 1,76</li>
+                    <li>Specie: Angle</li>
+                    <li>Birthday: August 13</li>
                     <li>Gender: female</li>
-                    <li>Sexuality: Demisexual</li>
-                    <li>MTBI: ESFP</li>
-                    <li>Zodiac: Aries</li>
+                    <li>Sexuality: Heterosexual</li>
+                    <li>MTBI: ENTJ</li>
+                    <li>Zodiac: Leo ♌</li>
                 </ul>
             </div>
             <div class="xp-container">
                 <h2>Backstory</h2>
-                <p>She comes from the Rainbow Unicorn Royal House, which has been trying to wipe out races like tigers for a long time and is at war with other powerful beings.  
-
-                    Even among unicorns, Louann was born with extraordinary abilities—specifically, the power of invisibility. As a child, she was primarily trained to control this unique power while also being taught that, as a woman, she should stay out of politics and obey her father. This was meant to ensure that she would one day fully master her abilities and become useful in the war.  
-                    
-                    At the same time, she was promised to a unicorn man from the Frost Unicorn House, who was already in his thirties. Their union and the birth of heirs were meant to merge their houses, with the hope that their offspring would inherit their powerful abilities.  
-                    
-                    However, Louann barely managed to escape using her invisibility powers. She wandered for several days, lost and alone, until she finally reached an academy and pleaded for entry.</p>
+                <p>Her wealthy family wanted to get rid of her since she was considered very weak among the angels, so her relatives saw no 
+                    use in her. Her older brother, on the other hand, showed great talent in magic and strategy at a young age, which is why 
+                    he was raised and trained by their relatives as the new lord of their house. The directors found her on the streets when 
+                    she once again tried to return to her family’s estate after running away from her new foster parents.</p>
             </div>
         </div>
     </div>
@@ -110,9 +107,9 @@
                 labels: ['IQ', 'Magical talent', 'Mental', 'Velocity', 'Stamina', 'Strength', 'Social skills', 'Creativity'],
                 datasets: [{
                     label: 'Stats',
-                    data: [55, 65, 45, 70, 76, 30, 85, 80],
-                    backgroundColor: 'rgba(255, 192, 203, 0.2)',     //Ändern je nach Character
-                    borderColor: 'rgba(255, 192, 203, 1)',          //Ändern je nach Character
+                    data: [55, 50, 35, 60, 60, 30, 25, 70],
+                    backgroundColor: 'rgba(255, 213, 99, 0.2)',     //Ändern je nach Character
+                    borderColor: 'rgba(157, 164, 99, 0.74)',          //Ändern je nach Character
                     borderWidth: 1
                 }]
             },

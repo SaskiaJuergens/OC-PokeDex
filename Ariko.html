@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mitsu Character Board</title>
+    <title>Ariko Character Board</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="css/Characterdetail.css">
     <!-- Google Fonts: Merriweather (Serifen-Schriftart) -->
@@ -14,21 +14,21 @@
             background: #222;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 0 5px rgba(236, 102, 6, 0.584);  /*Farbe je nach Character ändern*/
+            box-shadow: 0 0 5px #80808063;  /*Farbe je nach Character ändern*/
             text-align: center;
             width: 100%;
         }
         .header-text {
-            font-family: 'Merriweather', serif;  /* Serifen-Schriftart */
-            font-size: 3em;  /* Größerer Text */
-            font-weight: 700;  /* Fett */
+            font-family: 'Merriweather', serif; 
+            font-size: 3em;  
+            font-weight: 700;  
             text-align: center;
             margin-bottom: 20px;
-            color: #ffad72;  /* Leuchtendes */
+            color: #b3b3b3b1;  /* Leuchtendes */
             text-shadow: 
-                0 0 5px #ff7e21, /* Schlagschatten */
-                0 0 10px #ff7e21,
-                0 0 15px #ff7e21;
+                0 0 5px #80808063, /* Schlagschatten */
+                0 0 10px #80808063,
+                0 0 15px #80808063;
         }
     </style>
 
@@ -39,37 +39,33 @@
 <body>
     <a href="#" class="back-button" id="backButton">&#8592;Back</a>
 
-    <div class="header-text">Mitsu</div>
+    <div class="header-text">Ariko</div>
     <div class="dashboard">
         <div class="left">
             <div class="card">
-                <img src="alle_png/mitsu2.png" alt="Charakter 1">
+                <img src="alle_png/Ariko2.png" alt="Charakter 1">
                 <div class="stat-container">
-                    <img src="alle_png/sabrina2.png" alt="Sabrina">
-                    <div class="stat"><div style="width: 80%; background: rgb(255, 85, 85)"></div>Ex-Friend</div>
+                    <img src="alle_png/niall-vampire2.png" alt="Renji">
+                    <div class="stat"><div style="width: 70%;"></div>Friend</div>
                 </div>
                 <div class="stat-container">
-                    <img src="alle_png/Kagami.jpg" alt="Kagami">
-                    <div class="stat"><div style="width: 80%;"></div>Friend</div>
+                    <img src="alle_png/Pyronus2.png" alt="Shouta">
+                    <div class="stat"><div style="width: 60%;"></div>Friend</div>
                 </div>
                 <div class="stat-container">
-                    <img src="motivation-icon.png" alt="Yuna">
-                    <div class="stat"><div style="width: 90%; background: rgb(255, 107, 206)"></div>Friend & Crush</div>
+                    <img src="alle_png/Ethan2.png" alt="Shouta">
+                    <div class="stat"><div style="width: 60%;"></div>Friend</div>
                 </div>
                 <div class="stat-container">
-                    <img src="motivation-icon.png" alt="Renji">
-                    <div class="stat"><div style="width: 53%;"></div>Friend</div>
+                    <img src="alle_png/Lumiel2.png" alt="Kagami">
+                    <div class="stat"><div style="width: 50%;"></div>Friend</div>
                 </div>
                 <div class="stat-container">
-                    <img src="motivation-icon.png" alt="Shouta">
-                    <div class="stat"><div style="width: 64%;"></div>Friend</div>
+                    <img src="alle_png/Lillith2.png" alt="Lumiel">
+                    <div class="stat"><div style="width: 67%;"></div>Friend</div>
                 </div>
                 <div class="stat-container">
-                    <img src="alle_png/Louann2.png" alt="Louann">
-                    <div class="stat"><div style="width: 10%; background: rgb(255, 85, 85)"></div>Friend</div>
-                </div>
-                <div class="stat-container">
-                    <img src="alle_png/Ariko2.png" alt="Ariko">
+                    <img src="alle_png/mitsu2.png" alt="GF">
                     <div class="stat"><div style="width: 30%;"></div>Friend</div>
                 </div>
             </div>
@@ -77,26 +73,26 @@
         <div class="middle">
             <div class="transparent-card">
                 <canvas id="radarChart"></canvas>
-                <img src="alle_png/mitsu.png" alt="Background" style="width:100%; max-width:400px;">
+                <img src="alle_png/Ariko.png" alt="Background" style="width:100%; max-width:400px;">
             </div>
         </div>
         <div class="right">
             <div class="tasks">
                 <h2>Attributes</h2>
                 <ul>
-                    <li>Age: 17</li>
-                    <li>Height: 1,69</li>
-                    <li>Specie: Tiger</li>
-                    <li>Birthday: March 3</li>
-                    <li>Gender: non-binary</li>
-                    <li>Sexuality: Pansexual</li>
-                    <li>MTBI: ISTP</li>
-                    <li>Zodiac: Pisces</li>
+                    <li>Age: 18</li>
+                    <li>Height: 1,87</li>
+                    <li>Specie: Werwolf</li>
+                    <li>Birthday: October 24</li>
+                    <li>Gender: male</li>
+                    <li>Sexuality: Bisexual</li>
+                    <li>MTBI: ENFP</li>
+                    <li>Zodiac: Scorpio ♏</li>
                 </ul>
             </div>
             <div class="xp-container">
                 <h2>Backstory</h2>
-                <p>Raised in slavery, bought free by Directprom. Has trust issues with other beings. But now an angel, Sabrina, is showing her everything and trying to befriend her.</p>
+                <p>Has no Backstory yet...</p>
             </div>
         </div>
     </div>
@@ -112,9 +108,9 @@
                 labels: ['IQ', 'Magical talent', 'Mental', 'Velocity', 'Stamina', 'Strength', 'Social skills', 'Creativity'],
                 datasets: [{
                     label: 'Stats',
-                    data: [64, 40, 65, 80, 85, 90, 40, 35],
-                    backgroundColor: 'rgba(236, 102, 6, 0.1',
-                    borderColor: 'rgba(236, 102, 6, 1)',
+                    data: [45, 40, 60, 75, 58, 99, 65, 20],
+                    backgroundColor: 'rgba(128, 128, 128, 0.2)',     //Ändern je nach Character
+                    borderColor: 'rgba(128, 128, 128, 1)',          //Ändern je nach Character
                     borderWidth: 1
                 }]
             },
@@ -124,16 +120,16 @@
                     r: {
                         angleLines: { 
                             display: true, 
-                            borderColor: 'rgba(169, 169, 169, 0.5)' // Helles Grau für die Linien
+                            borderColor: 'rgba(255, 246, 246, 0.46)' 
                         },
                         grid: {
-                            color: 'rgba(169, 169, 169, 0.2)' // Helles Grau für den Hintergrundraster
+                            color: 'rgb(250, 238, 223)' 
                         },
                         ticks: {
                             font: {
-                                size: 10 // Kleinere Schriftgröße für suggestedMin und suggestedMax Zahlen
+                                size: 10 
                             },
-                            stepSize: 20, // Optional: Anpassung der Schritte zwischen den Werten
+                            stepSize: 20, 
                         },
                         suggestedMin: 0,
                         suggestedMax: 100

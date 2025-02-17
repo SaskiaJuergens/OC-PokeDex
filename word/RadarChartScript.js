@@ -40,7 +40,7 @@ if (ocName === 'Aletea') {
     dataLineC = 'rgba(255, 99, 132, 1)';
 }  else if (ocName === 'Lumiel') {
     data = [60, 40, 80, 70, 50, 20, 90, 40, 60, 10];
-    dataBackC = 'rgba(230, 230, 250, 0.2)'; // Lilac with 20% opacity
+    dataBackC = 'rgba(126, 64, 176, 0.48)'; // Lilac with 20% opacity
     dataLineC = 'rgba(200, 162, 200, 1)'; // lilac
 }  else if (ocName === 'Mitsu') {
     data = [0, 60, 80, 20, 60, 100, 90, 70, 50, 50];
@@ -60,8 +60,8 @@ if (ocName === 'Aletea') {
     dataLineC = 'rgba(0, 0, 139, 1)'; // Dark blue
 } else if (ocName === 'Sabrina') {
     data = [0, 60, 80, 20, 60, 100, 90, 70, 50, 50];
-    dataBackC = 'rgba(255, 99, 132, 0.2)';
-    dataLineC = 'rgba(255, 99, 132, 1)';
+    dataBackC = 'rgba(255, 213, 99, 0.2)';
+    dataLineC = 'rgba(157, 164, 99, 0.74)';
 } else if (ocName === 'Tyler') {
     data = [0, 60, 80, 20, 60, 100, 90, 70, 50, 50];
     dataBackC = 'rgba(255, 99, 132, 0.2)';
