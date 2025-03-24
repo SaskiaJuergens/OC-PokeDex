@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renji Character Board</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="css/Characterdetail.css">
+    <!-- Google Fonts: Merriweather (Serifen-Schriftart) -->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        .card {
+            background: #222;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 5px #caca09;  /*Farbe je nach Character ändern*/
+            text-align: center;
+            width: 100%;
+        }
+        .header-text {
+            font-family: 'Merriweather', serif;  /* Serifen-Schriftart */
+            font-size: 3em;  /* Größerer Text */
+            font-weight: 700;  /* Fett */
+            text-align: center;
+            margin-bottom: 20px;
+            color: rgb(214, 214, 140);  /* Leuchtendes */
+            text-shadow: 
+                0 0 5px #caca09, /* Schlagschatten */
+                0 0 10px #caca09,
+                0 0 15px #caca09;
+        }
+    </style>
+
+
+
+
+</head>
+<body>
+    <a href="#" class="back-button" id="backButton">&#8592;Back</a>
+
+    <div class="header-text">Renji</div>
+    <div class="dashboard">
+        <div class="left">
+            <div class="card">
+                <img src="alle_png/OCsNew.jpg" alt="Charakter 1">
+                <div class="stat-container">
+                    <img src="alle_png/icon.png" alt="Kagami">
+                    <div class="stat"><div style="width: 80%;"></div>Friend</div>
+                </div>
+                <div class="stat-container">
+                    <img src="motivation-icon.png" alt="Yuna">
+                    <div class="stat"><div style="width: 65%;"></div>Younger sister</div>
+                </div>
+                <div class="stat-container">
+                    <img src="alle_png/mitsu2.png" alt="Mitsu">
+                    <div class="stat"><div style="width: 63%;"></div>Friend</div>
+                </div>
+                <div class="stat-container">
+                    <img src="motivation-icon.png" alt="Shouta">
+                    <div class="stat"><div style="width: 64%;"></div>Younger Brother</div>
+                </div>
+                <div class="stat-container">
+                    <img src="alle_png/Louann2.png" alt="Louann">
+                    <div class="stat"><div style="width: 74%;"></div>Friend</div>
+                </div>
+            </div>
+        </div>
+        <div class="middle">
+            <div class="transparent-card">
+                <canvas id="radarChart"></canvas>
+                <img src="alle_png/OCsNew.jpg" alt="Background" style="width:100%; max-width:400px;">
+            </div>
+        </div>
+        <div class="right">
+            <div class="tasks">
+                <h2>Attributes</h2>
+                <ul>
+                    <li>Age: 18</li>
+                    <li>Height: 1,87</li>
+                    <li>Specie: Jiangshi</li>
+                    <li>Birthday: Novembre 2</li>
+                    <li>Gender: male</li>
+                    <li>Sexuality: Bisexual</li>
+                    <li>MTBI: INTP</li>
+                    <li>Zodiac: Scorpio ♏</li>
+                </ul>
+            </div>
+            <div class="xp-container">
+                <h2>Backstory</h2>
+                <p>He was abandoned by his parents at a young age. He and his siblings were born to a Kitsune mother 
+                    and a Jiangshi father, meant to become powerful magical beings. However, he was not the perfect 
+                    creation they had hoped for, as he only inherited the Jiangshi traits. Whether his parents had more 
+                    children after them remains unknown to him.</p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        const ctx = document.getElementById('radarChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'radar',
+            data: {
+                labels: ['IQ', 'Magical talent', 'Mental', 'Velocity', 'Stamina', 'Strength', 'Social skills', 'Creativity'],
+                datasets: [{
+                    label: 'Stats',
+                    data: [64, 40, 45, 79, 79, 80, 50, 50],
+                    backgroundColor: 'rgba(202, 202, 9, 0.2)',
+                    borderColor: 'rgb(202, 202, 9, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    r: {
+                        angleLines: { 
+                            display: true, 
+                            borderColor: 'rgba(169, 169, 169, 0.5)' // Helles Grau für die Linien
+                        },
+                        grid: {
+                            color: 'rgba(169, 169, 169, 0.2)' // Helles Grau für den Hintergrundraster
+                        },
+                        ticks: {
+                            font: {
+                                size: 10 // Kleinere Schriftgröße für suggestedMin und suggestedMax Zahlen
+                            },
+                            stepSize: 20, // Optional: Anpassung der Schritte zwischen den Werten
+                        },
+                        suggestedMin: 0,
+                        suggestedMax: 100
+                    }
+                }
+            }
+        });
+        document.getElementById('backButton').addEventListener('click', function() {
+            window.location.href = 'index.html';  
+        });
+
+    </script>
+</body>
+</html>

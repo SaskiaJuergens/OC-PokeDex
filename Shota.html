@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shouta Character Board</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="css/Characterdetail.css">
+    <!-- Google Fonts: Merriweather (Serifen-Schriftart) -->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        .card {
+            background: #222;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgb(187, 34, 172);  /*Farbe je nach Character ändern*/
+            text-align: center;
+            width: 100%;
+        }
+        .header-text {
+            font-family: 'Merriweather', serif;  /* Serifen-Schriftart */
+            font-size: 3em;  /* Größerer Text */
+            font-weight: 700;  /* Fett */
+            text-align: center;
+            margin-bottom: 20px;
+            color: #db7bd1;  /* Leuchtendes */
+            text-shadow: 
+                0 0 5px #bb22ac, /* Schlagschatten */
+                0 0 10px #bb22ac,
+                0 0 15px #bb22ac;
+        }
+    </style>
+
+
+
+
+</head>
+<body>
+    <a href="#" class="back-button" id="backButton">&#8592;Back</a>
+
+    <div class="header-text">Shouta</div>
+    <div class="dashboard">
+        <div class="left">
+            <div class="card">
+                <img src="alle_png/OCsNew.jpg" alt="Charakter 1">
+                <div class="stat-container">
+                    <img src="alle_png/icon.png" alt="Kagami">
+                    <div class="stat"><div style="width: 70%;"></div>Friend</div>
+                </div>
+                <div class="stat-container">
+                    <img src="motivation-icon.png" alt="Yuna">
+                    <div class="stat"><div style="width: 65%;"></div>Twin sister</div>
+                </div>
+                <div class="stat-container">
+                    <img src="alle_png/mitsu2.png" alt="Mitsu">
+                    <div class="stat"><div style="width: 75%;  background: rgb(255, 123, 224);"></div>Friend & Crush</div>
+                </div>
+                <div class="stat-container">
+                    <img src="motivation-icon.png" alt="Renji">
+                    <div class="stat"><div style="width: 64%;"></div>older Brother</div>
+                </div>
+            </div>
+        </div>
+        <div class="middle">
+            <div class="transparent-card">
+                <canvas id="radarChart"></canvas>
+                <img src="alle_png/OCsNew.jpg" alt="Background" style="width:100%; max-width:400px;">
+            </div>
+        </div>
+        <div class="right">
+            <div class="tasks">
+                <h2>Attributes</h2>
+                <ul>
+                    <li>Age: 17</li>
+                    <li>Height: 1,70</li>
+                    <li>Specie: Kitsune</li>
+                    <li>Birthday: September 5</li>
+                    <li>Gender: male</li>
+                    <li>Sexuality: Pansexual</li>
+                    <li>MTBI: ESFP</li>
+                    <li>Zodiac: Virgo ♍</li>
+                </ul>
+            </div>
+            <div class="xp-container">
+                <h2>Backstory</h2>
+                <p>He was abandoned by his parents at a young age. He and his siblings were born to a Kitsune mother 
+                    and a Jiangshi father, meant to become powerful magical beings. However, he was not the perfect 
+                    creation they had hoped for, as he only inherited the Kitsune traits. </p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        const ctx = document.getElementById('radarChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'radar',
+            data: {
+                labels: ['IQ', 'Magical talent', 'Mental', 'Velocity', 'Stamina', 'Strength', 'Social skills', 'Creativity'],
+                datasets: [{
+                    label: 'Stats',
+                    data: [59, 60, 55, 70, 70, 60, 80, 60],
+                    backgroundColor: 'rgb(187, 34, 172, 0.2)',
+                    borderColor: 'rgb(187, 34, 172, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    r: {
+                        angleLines: { 
+                            display: true, 
+                            borderColor: 'rgba(169, 169, 169, 0.5)' // Helles Grau für die Linien
+                        },
+                        grid: {
+                            color: 'rgba(169, 169, 169, 0.2)' // Helles Grau für den Hintergrundraster
+                        },
+                        ticks: {
+                            font: {
+                                size: 10 // Kleinere Schriftgröße für suggestedMin und suggestedMax Zahlen
+                            },
+                            stepSize: 20, // Optional: Anpassung der Schritte zwischen den Werten
+                        },
+                        suggestedMin: 0,
+                        suggestedMax: 100
+                    }
+                }
+            }
+        });
+        document.getElementById('backButton').addEventListener('click', function() {
+            window.location.href = 'index.html';  
+        });
+
+    </script>
+</body>
+</html>

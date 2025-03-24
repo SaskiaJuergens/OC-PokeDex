@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pyronus Character Board</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="css/Characterdetail.css">
+    <!-- Google Fonts: Merriweather (Serifen-Schriftart) -->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        .card {
+            background: #222;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 5px #006400;  /*Farbe je nach Character ändern*/
+            text-align: center;
+            width: 100%;
+        }
+        .header-text {
+            font-family: 'Merriweather', serif; 
+            font-size: 3em;  
+            font-weight: 700;  
+            text-align: center;
+            margin-bottom: 20px;
+            color: #57b657;  /* Leuchtendes */
+            text-shadow: 
+                0 0 5px #006400, /* Schlagschatten */
+                0 0 10px #006400,
+                0 0 15px #006400;
+        }
+    </style>
+
+
+
+
+</head>
+<body>
+    <a href="#" class="back-button" id="backButton">&#8592;Back</a>
+
+    <div class="header-text">Pyronus</div>
+    <div class="dashboard">
+        <div class="left">
+            <div class="card">
+                <img src="alle_png/niall-vampire2.png" alt="Charakter 1">
+                <div class="stat-container">
+                    <img src="alle_png/Ethan2.png" alt="Ethan">
+                    <div class="stat"><div style="width: 65%;"></div>Friend</div>
+                </div>
+                <div class="stat-container">
+                    <img src="alle_png/niall-vampire2.png" alt="Niall">
+                    <div class="stat"><div style="width: 65%;"></div>Friend</div>
+                </div>
+                <div class="stat-container">
+                    <img src="alle_png/Ariko2.png" alt="Ariko">
+                    <div class="stat"><div style="width: 65%;"></div>Friend</div>
+                </div>
+                <div class="stat-container">
+                    <img src="alle_png/Lumiel2.png" alt="Lumiel">
+                    <div class="stat"><div style="width: 55%;"></div>Friend</div>
+                </div>
+                <div class="stat-container">
+                    <img src="alle_png/Lillith2.png" alt="Lillith">
+                    <div class="stat"><div style="width: 50%;"></div>Friend</div>
+                </div>
+                <div class="stat-container">
+                    <img src="alle_png/sabrina2.png" alt="Sarbina">
+                    <div class="stat"><div style="width: 50%;  background: rgb(255, 123, 224);"></div>Ex-Girlfriend</div>
+                </div>
+            </div>
+        </div>
+        <div class="middle">
+            <div class="transparent-card">
+                <canvas id="radarChart"></canvas>
+                <img src="alle_png/niall-vampire.png" alt="Background" style="width:100%; max-width:400px;">
+            </div>
+        </div>
+        <div class="right">
+            <div class="tasks">
+                <h2>Attributes</h2>
+                <ul>
+                    <li>Age: 18</li>
+                    <li>Height: 1,93</li>
+                    <li>Specie: Dragon</li>
+                    <li>Birthday: April 19</li>
+                    <li>Gender: male</li>
+                    <li>Sexuality: Heterosexual</li>
+                    <li>MTBI: ESTJ</li>
+                    <li>Zodiac: Aries ♈ </li>
+                </ul>
+            </div>
+            <div class="xp-container">
+                <h2>Backstory</h2>
+                <p>After his parents passed away, he inherited a large company. He had been prepared from an early age by 
+                    his parents to take over the business. Raised with a strong focus on profit, he was trained to prioritize 
+                    financial success. In contrast, during his time at the academy, he provides some financial support to the institution.</p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        const ctx = document.getElementById('radarChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'radar',
+            data: {
+                labels: ['IQ', 'Magical talent', 'Mental', 'Velocity', 'Stamina', 'Strength', 'Social skills', 'Creativity'],
+                datasets: [{
+                    label: 'Stats',
+                    data: [89, 80, 65, 70, 69, 93, 70, 75],
+                    backgroundColor: 'rgba(0, 100, 0, 0.2)',     //Ändern je nach Character
+                    borderColor: 'rgba(0, 100, 0, 1)',          //Ändern je nach Character
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    r: {
+                        angleLines: { 
+                            display: true, 
+                            borderColor: 'rgba(255, 246, 246, 0.46)' 
+                        },
+                        grid: {
+                            color: 'rgb(250, 238, 223)' 
+                        },
+                        ticks: {
+                            font: {
+                                size: 10 
+                            },
+                            stepSize: 20, 
+                        },
+                        suggestedMin: 0,
+                        suggestedMax: 100
+                    }
+                }
+            }
+        });
+        document.getElementById('backButton').addEventListener('click', function() {
+            window.location.href = 'index.html';  
+        });
+
+    </script>
+</body>
+</html>
