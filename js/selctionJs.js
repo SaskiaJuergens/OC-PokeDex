@@ -58,3 +58,8 @@ function moveLeft() { activeIndex = (activeIndex - 1 + characterImages.length) %
 function moveRight() { activeIndex = (activeIndex + 1) % characterImages.length; loadCharacters(); }
 document.addEventListener("keydown", (event) => { if (event.key === "ArrowLeft") moveLeft(); else if (event.key === "ArrowRight") moveRight(); });
 loadCharacters();
+
+
+document.getElementById('novel-button').addEventListener('click', function() {
+  window.location.href = 'novel.html';
+});
