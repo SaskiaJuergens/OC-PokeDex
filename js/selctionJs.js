@@ -63,3 +63,7 @@ loadCharacters();
 document.getElementById('novel-button').addEventListener('click', function() {
   window.location.href = 'novel.html';
 });
+
+document.getElementById('novelDE-button').addEventListener('click', function() {
+  window.location.href = 'novel-DE.html';
+});
