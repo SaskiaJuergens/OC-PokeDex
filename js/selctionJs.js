@@ -1,4 +1,4 @@
-const characterImages = ["Aletea", "Ariko", "Chloe", "Dana", "Ethan", "Kagami", "Louann", "Niall", "Tyler", "Luke", "Lumiel", "Mitsu", "Pyronus", "Renji", "Rebecca", "Shouta", "Sabrina", "Yuna"];
+const characterImages = ["Aletea", "Ariko", "Chloe", "Dana", "Ethan", "Kagami", "Louann", "Niall", "Tyler", "Luke", "Lumiel", "Mitsu", "Pyronus", "Renji", "Rebecca", "Shota", "Sabrina", "Yuna"];
 const characterDetails = {
   "Mitsu": { name: "Mitsu", age: 17, height: 1.69, species: "Tiger", birthday:"March 3", gender: "non-binary", sexuality: "Pansexual", MTBI: "ISPT", zoudiac: "Aries"},
   "Dana": { name: "Dana", age: 18, height: 1.72, species: "Deer", birthday:"August 9", gender: "female", sexuality: "Bisexual", MTBI: "ESFP", zoudiac: "Leo" },
@@ -17,7 +17,7 @@ const characterDetails = {
   "Sabrina": {name:"Sabrina", age: 18, height: 1.76, species: "Angle", birthday:"August 13", gender: "female", sexuality: "Heterosexual", MTBI: "ENTJ", zoudiac: "Leo"},
   "Rebecca": {name: "Rebecca", age: 17, height: 1.80, species: "Robot", birthday:"February 17", gender: "female", sexuality: "Asexual", MTBI: "INTP", zoudiac: "Aquarius"},
   "Yuna": { name:"Yuna", age: 17, height: 1.70, species: "Kitsune-Jiangshi", birthday:"September 5", gender: "female", sexuality: "Heterosexual", MTBI: "ENFP", zoudiac: "Virgo"},
-  "Shouta": {name: "Shouta", age: 17, height: 1.70, species: "Kitsune", birthday:"September 5", gender: "male", sexuality: "Pansexual", MTBI: "ESFP", zoudiac: "Virgo"}
+  "Shota": {name: "Shota", age: 17, height: 1.70, species: "Kitsune", birthday:"September 5", gender: "male", sexuality: "Pansexual", MTBI: "ESFP", zoudiac: "Virgo"}
 };
 let activeIndex = 0;
   function updateCharacterDetails() {
