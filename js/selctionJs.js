@@ -1,4 +1,4 @@
-const characterImages = ["Aletea", "Ariko", "Dana", "Ethan", "Kagami", "Louann", "Niall", "Tyler", "Luke", "Lumiel", "Mitsu", "Pyronus", "Renji", "Rebecca", "Shouta", "Sabrina", "Yuna"];
+const characterImages = ["Aletea", "Ariko", "Chloe", "Dana", "Ethan", "Kagami", "Louann", "Niall", "Tyler", "Luke", "Lumiel", "Mitsu", "Pyronus", "Renji", "Rebecca", "Shouta", "Sabrina", "Yuna"];
 const characterDetails = {
   "Mitsu": { name: "Mitsu", age: 17, height: 1.69, species: "Tiger", birthday:"March 3", gender: "non-binary", sexuality: "Pansexual", MTBI: "ISPT", zoudiac: "Aries"},
   "Dana": { name: "Dana", age: 18, height: 1.72, species: "Deer", birthday:"August 9", gender: "female", sexuality: "Bisexual", MTBI: "ESFP", zoudiac: "Leo" },
